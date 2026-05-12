@@ -1,0 +1,2169 @@
+{
+  "syncedAt": "2026-05-12T21:40:40.395Z",
+  "packageName": "ZZSD",
+  "objectCount": 188,
+  "objects": [
+    {
+      "name": "ZCL_BATCH_SCHEDULE",
+      "adtType": "APLO/TYP",
+      "description": "batch schedule log object",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/APLO_TYP/ZCL_BATCH_SCHEDULE.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZC_MY_NEW_TABLE",
+      "adtType": "BDEF/BDO",
+      "description": "Projection view for my new table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/BDEF_BDO/ZC_MY_NEW_TABLE.asbdef",
+      "status": "skipped"
+    },
+    {
+      "name": "ZI_MY_NEW_TABLE",
+      "adtType": "BDEF/BDO",
+      "description": "Interface View for My New Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/BDEF_BDO/ZI_MY_NEW_TABLE.asbdef",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_I_PO_M",
+      "adtType": "BDEF/BDO",
+      "description": "po managed",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/BDEF_BDO/Z_I_PO_M.asbdef",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_I_SO_M",
+      "adtType": "BDEF/BDO",
+      "description": "root entity sales order",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/BDEF_BDO/Z_I_SO_M.asbdef",
+      "status": "skipped"
+    },
+    {
+      "name": "ZCL_ABAP_FILE_UPLOADER",
+      "adtType": "CLAS/OC",
+      "description": "file uploader",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_ABAP_FILE_UPLOADER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_BATCH_POLL_QAD_STATUS",
+      "adtType": "CLAS/OC",
+      "description": "batch status",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_BATCH_POLL_QAD_STATUS.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_BATCH_QAD_QUERY_RUNNER",
+      "adtType": "CLAS/OC",
+      "description": "get new shipments job",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_BATCH_QAD_QUERY_RUNNER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_BATCH_SCHEDULE_QAD",
+      "adtType": "CLAS/OC",
+      "description": "get new shipments job",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_BATCH_SCHEDULE_QAD.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_BTP_SYNC_TEST",
+      "adtType": "CLAS/OC",
+      "description": "btp configt sync test",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_BTP_SYNC_TEST.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_BTP_TO_ECC_SYNC",
+      "adtType": "CLAS/OC",
+      "description": "sync parcel tracking from btp to ecc",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_BTP_TO_ECC_SYNC.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CALCULATE_SO_STATUS",
+      "adtType": "CLAS/OC",
+      "description": "class description",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CALCULATE_SO_STATUS.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CE_COMPANY_CODES",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_CE_COMPANY_CODES",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CE_COMPANY_CODES.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CE_CONFIG_PIPE",
+      "adtType": "CLAS/OC",
+      "description": "config pipe class",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CE_CONFIG_PIPE.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CE_PARCEL_PIPE",
+      "adtType": "CLAS/OC",
+      "description": "ecc parcel tracking rfc query provider",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CE_PARCEL_PIPE.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CE_PRODUCT_PIPE",
+      "adtType": "CLAS/OC",
+      "description": "zcl_ce_product_pipe",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CE_PRODUCT_PIPE.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CLEANUP_CITIES",
+      "adtType": "CLAS/OC",
+      "description": "zcl_cleanup_cities",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CLEANUP_CITIES.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CONFLUENCE_LABEL_PAGE_DEMO",
+      "adtType": "CLAS/OC",
+      "description": "demo showing the labeling of pages in confluence...",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CONFLUENCE_LABEL_PAGE_DEMO.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_CREATE_DB_USER",
+      "adtType": "CLAS/OC",
+      "description": "create user apparently",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_CREATE_DB_USER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_DEMO_JOB_LOG",
+      "adtType": "CLAS/OC",
+      "description": "zcl_demo_job_log",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_DEMO_JOB_LOG.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_EUDR_REPLICATOR_PERSIST",
+      "adtType": "CLAS/OC",
+      "description": "EUDR Replicator with Persistence",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_EUDR_REPLICATOR_PERSIST.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_FILE_UPLOAD_HTTP_HANDLER",
+      "adtType": "CLAS/OC",
+      "description": "HTTP Handler for File Upload to ZMY_NEW_TABLE",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_FILE_UPLOAD_HTTP_HANDLER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_GENERATE_TEST_DATA",
+      "adtType": "CLAS/OC",
+      "description": "Generate test data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_GENERATE_TEST_DATA.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_GTT_SUBMIT_MESSAGE_SVG",
+      "adtType": "CLAS/OC",
+      "description": "submit message class",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_GTT_SUBMIT_MESSAGE_SVG.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_LOG_PAYLOAD_HTTP",
+      "adtType": "CLAS/OC",
+      "description": "zcl_log_payload_http class",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_LOG_PAYLOAD_HTTP.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_LOG_TEST",
+      "adtType": "CLAS/OC",
+      "description": "get new shipments job",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_LOG_TEST.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_OSAPIENS_SYNC",
+      "adtType": "CLAS/OC",
+      "description": "Osapiens Sync and Fiori",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_OSAPIENS_SYNC.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PROCESS_FILE_DATA",
+      "adtType": "CLAS/OC",
+      "description": "process file",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_PROCESS_FILE_DATA.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_QAD_QUERYSHIPMENT_SVC",
+      "adtType": "CLAS/OC",
+      "description": "Service Class to Query QAD Shipment Info",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_QAD_QUERYSHIPMENT_SVC.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_RUN_CONFLUENCE_DEMO",
+      "adtType": "CLAS/OC",
+      "description": "run confluence demo",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_RUN_CONFLUENCE_DEMO.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_RUN_CSV_UPLOAD",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_RUN_CSV_UPLOAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_RUN_CSV_UPLOAD.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_RUN_DELIVERY_JOB_HANDLER",
+      "adtType": "CLAS/OC",
+      "description": "delivery job handler",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_RUN_DELIVERY_JOB_HANDLER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_RUN_FILE_PROCESSOR",
+      "adtType": "CLAS/OC",
+      "description": "file processor",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_RUN_FILE_PROCESSOR.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_SEED_EXISTING_SHIPMENT",
+      "adtType": "CLAS/OC",
+      "description": "desc ZCL_SEED_EXISTING_SHIPMENT",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_SEED_EXISTING_SHIPMENT.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_TEST_ADD_ENTRIES_FM",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_TEST_ADD_ENTRIES_FM",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_TEST_ADD_ENTRIES_FM.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_TEST_EXISTING_SHIPMENT",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_TEST_EXISTING_SHIPMENT desc",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_TEST_EXISTING_SHIPMENT.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_TEST_QAD_QUERY_SHIPMENT",
+      "adtType": "CLAS/OC",
+      "description": "shipment test class",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_TEST_QAD_QUERY_SHIPMENT.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_UPLOAD_FROM_CSV",
+      "adtType": "CLAS/OC",
+      "description": "csv upload",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCL_UPLOAD_FROM_CSV.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCX_QAD_INTEGRATION_ERROR",
+      "adtType": "CLAS/OC",
+      "description": "Exception for QAD Integration Errors",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCX_QAD_INTEGRATION_ERROR.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCX_QAD_SIMPLE_ERROR",
+      "adtType": "CLAS/OC",
+      "description": "simple error",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZCX_QAD_SIMPLE_ERROR.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZSC_ECC_PARCEL",
+      "adtType": "CLAS/OC",
+      "description": "Consumption model for client proxy - generated",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/CLAS_OC/ZSC_ECC_PARCEL.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCDS_FILE_UPLOAD_PARAMS",
+      "adtType": "DDLS/DF",
+      "description": "File Upload Parameters",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZCDS_FILE_UPLOAD_PARAMS.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZCUP_PARCEL_TRAC",
+      "adtType": "DDLS/DF",
+      "description": "Interface View for Parcel Tracking Details",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZCUP_PARCEL_TRAC.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZC_BTP_PARCELSYNC",
+      "adtType": "DDLS/DF",
+      "description": "parcel sync",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZC_BTP_PARCELSYNC.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZC_MY_NEW_TABLE",
+      "adtType": "DDLS/DF",
+      "description": "Projection view for my new table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZC_MY_NEW_TABLE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZI_DEL_REQ_H",
+      "adtType": "DDLS/DF",
+      "description": "Interface View for Delivery Request Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZI_DEL_REQ_H.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZI_MY_NEW_TABLE",
+      "adtType": "DDLS/DF",
+      "description": "Interface View for My New Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZI_MY_NEW_TABLE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZI_PAR_TRC_H",
+      "adtType": "DDLS/DF",
+      "description": "Interface View for Parcel Tracking Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZI_PAR_TRC_H.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZI_QAD_POLL_LOG",
+      "adtType": "DDLS/DF",
+      "description": "Polling Log for QAD Shipments",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZI_QAD_POLL_LOG.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZUPLOAD_A_FILEACTION",
+      "adtType": "DDLS/DF",
+      "description": "Abstract Entity for File Upload Action",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/ZUPLOAD_A_FILEACTION.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_CE_SALESORDERSTATUS",
+      "adtType": "DDLS/DF",
+      "description": "custom entity sales order status",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_CE_SALESORDERSTATUS.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_C_PO_M",
+      "adtType": "DDLS/DF",
+      "description": "Consumption/Projection",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_C_PO_M.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_C_PRODUCT_M",
+      "adtType": "DDLS/DF",
+      "description": "product projection",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_C_PRODUCT_M.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_C_SO_M",
+      "adtType": "DDLS/DF",
+      "description": "Consumption/Projection sales order",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_C_SO_M.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_C_ZLIKP_BY_CITY",
+      "adtType": "DDLS/DF",
+      "description": "Delivery consumption view",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_C_ZLIKP_BY_CITY.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_COMPANYCODE",
+      "adtType": "DDLS/DF",
+      "description": "Z_I_CompanyCode",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_COMPANYCODE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_CONFIGPIPE",
+      "adtType": "DDLS/DF",
+      "description": "config pipe",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_CONFIGPIPE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_PARCEL_DATA",
+      "adtType": "DDLS/DF",
+      "description": "Joined Delivery Header and Package Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_PARCEL_DATA.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_PARCEL_PIPE",
+      "adtType": "DDLS/DF",
+      "description": "parcel pipe",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_PARCEL_PIPE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_PO_M",
+      "adtType": "DDLS/DF",
+      "description": "po managed",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_PO_M.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_PRODUCT_PIPE",
+      "adtType": "DDLS/DF",
+      "description": "product pipe",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_PRODUCT_PIPE.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_PURCHASEORDER",
+      "adtType": "DDLS/DF",
+      "description": "Purchase Order Interface View",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_PURCHASEORDER.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_SALESORDER",
+      "adtType": "DDLS/DF",
+      "description": "Sales order interface view",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_SALESORDER.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_SO_M",
+      "adtType": "DDLS/DF",
+      "description": "root entity sales order",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_SO_M.asddls",
+      "status": "source"
+    },
+    {
+      "name": "Z_I_ZLIKP",
+      "adtType": "DDLS/DF",
+      "description": "ZLIKP odata service",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/DDLS_DF/Z_I_ZLIKP.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZZSD",
+      "adtType": "FUGR/F",
+      "description": "SD function group",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/FUGR_F/ZZSD.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZQAD_BINDING",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/ZQAD_BINDING.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/ZUI_MY_NEW_TABLE_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_COMPANYCODE_O4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_PARCEL_DATA_V4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PO_M_O4",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_PO_M_O4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_PRODUCT_INFO_V4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_M_04",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_SO_M_04.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_SO_STATUS_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI",
+      "adtType": "G4BA",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/G4BA/Z_UI_ZLIKP_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD",
+      "adtType": "HTTP",
+      "description": "upload files",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/HTTP/ZABAP_FILE_UPLOAD.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_DELIVERY_JOB",
+      "adtType": "HTTP",
+      "description": "delivery job handler",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/HTTP/Z_DELIVERY_JOB.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC",
+      "adtType": "HTTP",
+      "description": "HTTP Service for File Upload",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/HTTP/Z_HTTP_UPLOAD_SVC.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001_BE",
+      "adtType": "IWOM",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/IWOM/ZUI_CONFIG_SYNC_V2_0001_BE.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001",
+      "adtType": "IWSG",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/IWSG/ZUI_CONFIG_SYNC_V2_0001.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2                 0001",
+      "adtType": "IWSV",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/IWSV/ZUI_CONFIG_SYNC_V2_0001.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZMSG_QAD_OUTPUT",
+      "adtType": "MSAG/N",
+      "description": "qas output",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/MSAG_N/ZMSG_QAD_OUTPUT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001",
+      "adtType": "OA2S",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/OA2S/ZUI_CONFIG_SYNC_V2_0001.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZCL_JOB_LOG",
+      "adtType": "SAJC",
+      "description": "job log catalog",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SAJC/ZCL_JOB_LOG.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_QAS_JOBCAT",
+      "adtType": "SAJC",
+      "description": "job catalog entry",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SAJC/Z_QAS_JOBCAT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_LOG",
+      "adtType": "SAJT",
+      "description": "job log template",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SAJT/Z_JOB_TEMPLATE_LOG.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_QAD",
+      "adtType": "SAJT",
+      "description": "Z_JOB_TEMPLATE_QAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SAJT/Z_JOB_TEMPLATE_QAD.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_QAD_AU",
+      "adtType": "SAJT",
+      "description": "Z_JOB_TEMPLATE_QAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SAJT/Z_JOB_TEMPLATE_QAD_AU.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_DB_ACCESS_SCENARIO",
+      "adtType": "SCO1",
+      "description": "Z_DB_ACCESS_SCENARIO",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO1/Z_DB_ACCESS_SCENARIO.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_OSAPIENS_EUDR_OUTBOUND_CS",
+      "adtType": "SCO1",
+      "description": "Z_OSAPIENS_EUDR_OUTBOUND_CS",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO1/Z_OSAPIENS_EUDR_OUTBOUND_CS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD_HTTP",
+      "adtType": "SCO2",
+      "description": "HTTP Service ZABAP_FILE_UPLOAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/ZABAP_FILE_UPLOAD_HTTP.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZQAD_BINDING_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "ZQAD_BINDING",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/ZQAD_BINDING_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_IWSG",
+      "adtType": "SCO2",
+      "description": "ZUI_CONFIG_SYNC_V2",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/ZUI_CONFIG_SYNC_V2_IWSG.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "ZUI_MY_NEW_TABLE_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/ZUI_MY_NEW_TABLE_O4_UI_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_DELIVERY_JOB_HTTP",
+      "adtType": "SCO2",
+      "description": "HTTP Service Z_DELIVERY_JOB",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_DELIVERY_JOB_HTTP.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC_HTTP",
+      "adtType": "SCO2",
+      "description": "HTTP Service Z_HTTP_UPLOAD_SVC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_HTTP_UPLOAD_SVC_HTTP.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_COMPANYCODE_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_COMPANYCODE_O4_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_PARCEL_DATA_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_PARCEL_DATA_V4_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PO_M_O4_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_PO_M_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_PO_M_O4_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_PRODUCT_INFO_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_PRODUCT_INFO_V4_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_M_04_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_SO_M_04",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_SO_M_04_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_SO_STATUS_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_SO_STATUS_O4_UI_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "description": "Z_UI_ZLIKP_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SCO2/Z_UI_ZLIKP_O4_UI_0001_G4BA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_BC_PARCEL_DATA",
+      "adtType": "SIA1",
+      "description": "parcel data bc",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA1/Z_BC_PARCEL_DATA.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD_HTTP_IBS",
+      "adtType": "SIA6",
+      "description": "HTTP Service ZABAP_FILE_UPLOAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/ZABAP_FILE_UPLOAD_HTTP_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZCL_JOB_LOG_SAJC",
+      "adtType": "SIA6",
+      "description": "IAM APP:ZCL_JOB_LOG_SAJC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/ZCL_JOB_LOG_SAJC.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZQAD_BINDING_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "ZQAD_BINDING",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/ZQAD_BINDING_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_IWSG_IBS",
+      "adtType": "SIA6",
+      "description": "ZUI_CONFIG_SYNC_V2",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/ZUI_CONFIG_SYNC_V2_IWSG_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI_00_00001_IBS",
+      "adtType": "SIA6",
+      "description": "ZUI_MY_NEW_TABLE_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/ZUI_MY_NEW_TABLE_O4_UI_00_00001_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_DELIVERY_JOB_HTTP_IBS",
+      "adtType": "SIA6",
+      "description": "HTTP Service Z_DELIVERY_JOB",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_DELIVERY_JOB_HTTP_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC_HTTP_IBS",
+      "adtType": "SIA6",
+      "description": "HTTP Service Z_HTTP_UPLOAD_SVC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_HTTP_UPLOAD_SVC_HTTP_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_PARCEL_DATA_IAM_UI5A",
+      "adtType": "SIA6",
+      "description": "parcel data iam",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_PARCEL_DATA_IAM_UI5A.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_QAS_JOBCAT_SAJC",
+      "adtType": "SIA6",
+      "description": "IAM APP:Z_QAS_JOBCAT_SAJC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_QAS_JOBCAT_SAJC.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_COMPANYCODE_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_COMPANYCODE_O4_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_PARCEL_DATA_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_PARCEL_DATA_V4_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PO_M_O4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_PO_M_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_PO_M_O4_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_PRODUCT_INFO_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_PRODUCT_INFO_V4_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_M_04_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_SO_M_04",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_SO_M_04_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_SO_STATUS_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_SO_STATUS_O4_UI_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "description": "Z_UI_ZLIKP_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA6/Z_UI_ZLIKP_O4_UI_0001_G4BA_IBS.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_BC_PARCEL_DATA_0001",
+      "adtType": "SIA7",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SIA7/Z_BC_PARCEL_DATA_0001.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZZSD           907RM5PM0WS1BRG2HAYGJYC1N",
+      "adtType": "SICF/TYP",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SICF_TYP/ZZSD_907RM5PM0WS1BRG2HAYGJYC1N.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZQAD_BINDING",
+      "adtType": "SRVB/SVB",
+      "description": "my qad binding",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/ZQAD_BINDING.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2",
+      "adtType": "SRVB/SVB",
+      "description": "ZUI_CONFIG_SYNC_V2",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/ZUI_CONFIG_SYNC_V2.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI",
+      "adtType": "SRVB/SVB",
+      "description": "OData V4 UI Service for My New Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/ZUI_MY_NEW_TABLE_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4",
+      "adtType": "SRVB/SVB",
+      "description": "Z_UI_COMPANYCODE_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_COMPANYCODE_O4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4",
+      "adtType": "SRVB/SVB",
+      "description": "Parcel Data OData V4 Binding",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_PARCEL_DATA_V4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PO_M_O4",
+      "adtType": "SRVB/SVB",
+      "description": "expose po",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_PO_M_O4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "SRVB/SVB",
+      "description": "Z_UI_PRODUCT_INFO_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_PRODUCT_INFO_V4.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_M_04",
+      "adtType": "SRVB/SVB",
+      "description": "expose so",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_SO_M_04.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI",
+      "adtType": "SRVB/SVB",
+      "description": "Z_UI_SO_STATUS_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_SO_STATUS_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI",
+      "adtType": "SRVB/SVB",
+      "description": "OData V2 service for ZLIKP",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVB_SVB/Z_UI_ZLIKP_O4_UI.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZSC_ECC_PARCEL",
+      "adtType": "SRVC/SVM",
+      "description": "ecc parcel sync helper",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVC_SVM/ZSC_ECC_PARCEL.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZI_QAD_POLL_LOG",
+      "adtType": "SRVD/SRV",
+      "description": "qas poll log",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/ZI_QAD_POLL_LOG.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC",
+      "adtType": "SRVD/SRV",
+      "description": "ZUI_CONFIG_SYNC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/ZUI_CONFIG_SYNC.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE",
+      "adtType": "SRVD/SRV",
+      "description": "Service Definition for My New Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/ZUI_MY_NEW_TABLE.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "ZUI_YOURSERVICENAME_O4_UI",
+      "adtType": "SRVD/SRV",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/ZUI_YOURSERVICENAME_O4_UI.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_API_PARCEL_DATA",
+      "adtType": "SRVD/SRV",
+      "description": "Parcel Data OData Service Definition",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_API_PARCEL_DATA.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_API_PRODUCT_INFO",
+      "adtType": "SRVD/SRV",
+      "description": "z_api_product_info",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_API_PRODUCT_INFO.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_SD",
+      "adtType": "SRVD/SRV",
+      "description": "Z_UI_COMPANYCODE_SD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_COMPANYCODE_SD.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PO_M_SD",
+      "adtType": "SRVD/SRV",
+      "description": "expose Z_C_PO_M as PurchaseOrder",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_PO_M_SD.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "SRVD/SRV",
+      "description": "Z_UI_PRODUCT_INFO_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_PRODUCT_INFO_V4.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_M_SD",
+      "adtType": "SRVD/SRV",
+      "description": "salesr oders",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_SO_M_SD.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_SD",
+      "adtType": "SRVD/SRV",
+      "description": "status ui",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_SO_STATUS_SD.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_UI_ZLIKP",
+      "adtType": "SRVD/SRV",
+      "description": "Service Definition for ZLIKP",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SRVD_SRV/Z_UI_ZLIKP.srvd",
+      "status": "skipped"
+    },
+    {
+      "name": "08E6ACF5AA0D34933CED4B27CD9038HT",
+      "adtType": "SUSH",
+      "description": "Z_UI_COMPANYCODE_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/08E6ACF5AA0D34933CED4B27CD9038HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "1DF236A747255DE85C4C8368052B88HT",
+      "adtType": "SUSH",
+      "description": "Z_QAS_JOBCAT",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/1DF236A747255DE85C4C8368052B88HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "262392740F96CE96BC5EAE50086932HT",
+      "adtType": "SUSH",
+      "description": "ZUI_CONFIG_SYNC_V2_0001",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/262392740F96CE96BC5EAE50086932HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "26412EB0C11E5305D08FC3D7B83758HT",
+      "adtType": "SUSH",
+      "description": "ZABAP_FILE_UPLOAD",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/26412EB0C11E5305D08FC3D7B83758HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "2BA7106608DE15E093EC827940AD33HT",
+      "adtType": "SUSH",
+      "description": "ZCL_JOB_LOG",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/2BA7106608DE15E093EC827940AD33HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "44DD261F6B042CC394707277F03064HT",
+      "adtType": "SUSH",
+      "description": "Z_UI_SO_M_04",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/44DD261F6B042CC394707277F03064HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "4E61020D236FB009A225791D84C548HT",
+      "adtType": "SUSH",
+      "description": "Z_DELIVERY_JOB",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/4E61020D236FB009A225791D84C548HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "6905B721A19395D21FB7192AFEEED0HT",
+      "adtType": "SUSH",
+      "description": "Z_HTTP_UPLOAD_SVC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/6905B721A19395D21FB7192AFEEED0HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "6A63613780DC87286A01396CE46ECAHT",
+      "adtType": "SUSH",
+      "description": "ZQAD_BINDING",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/6A63613780DC87286A01396CE46ECAHT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "717F676731337B62FDB4BB700FAC95HT",
+      "adtType": "SUSH",
+      "description": "ZUI_MY_NEW_TABLE_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/717F676731337B62FDB4BB700FAC95HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "7B319D31DD92B772AA0170E9D9DE2BHT",
+      "adtType": "SUSH",
+      "description": "Z_UI_ZLIKP_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/7B319D31DD92B772AA0170E9D9DE2BHT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "835C44E8FDB89CF894B76EDA04EE2EHT",
+      "adtType": "SUSH",
+      "description": "Z_UI_PO_M_O4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/835C44E8FDB89CF894B76EDA04EE2EHT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "BC4A890B7096A4F436F560A89B35D0HT",
+      "adtType": "SUSH",
+      "description": "ZUI_CONFIG_SYNC_V2                 0001",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/BC4A890B7096A4F436F560A89B35D0HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "DACCCB69C3E5CAB2542D1927F5D929HT",
+      "adtType": "SUSH",
+      "description": "Z_UI_SO_STATUS_O4_UI",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/DACCCB69C3E5CAB2542D1927F5D929HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "E61058B7522D7B0546431862D893C4HT",
+      "adtType": "SUSH",
+      "description": "Z_UI_PRODUCT_INFO_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/E61058B7522D7B0546431862D893C4HT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "FD76BB21DC9156E6A700C073641FBDHT",
+      "adtType": "SUSH",
+      "description": "Z_UI_PARCEL_DATA_V4",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/SUSH/FD76BB21DC9156E6A700C073641FBDHT.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZCUP_PARCEL_TRAC",
+      "adtType": "TABL/DT",
+      "description": "Parcel tracking in ECC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZCUP_PARCEL_TRAC.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZDEL_REQ_H",
+      "adtType": "TABL/DT",
+      "description": "Delivery Request Header POC",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZDEL_REQ_H.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZEUDR_HEAD",
+      "adtType": "TABL/DT",
+      "description": "EUDR Assessment Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZEUDR_HEAD.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZEUDR_ITEM",
+      "adtType": "TABL/DT",
+      "description": "EUDR Assessment Items",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZEUDR_ITEM.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZLIKP",
+      "adtType": "TABL/DT",
+      "description": "Delivery Header Table (LIKP Replica)",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZLIKP.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZMY_BP_LOOKUP",
+      "adtType": "TABL/DT",
+      "description": "Business Partner Lookup Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZMY_BP_LOOKUP.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZMY_CITY_LOOKUP",
+      "adtType": "TABL/DT",
+      "description": "City Geolocation Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZMY_CITY_LOOKUP.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZMY_GEO_PLANTS",
+      "adtType": "TABL/DT",
+      "description": "Geo-Locations for Cities",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZMY_GEO_PLANTS.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZMY_NEW_TABLE",
+      "adtType": "TABL/DT",
+      "description": "My New Custom Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZMY_NEW_TABLE.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPAINPOINTS",
+      "adtType": "TABL/DT",
+      "description": "ERP Pain Points Master Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZPAINPOINTS.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPAR_SYNC_LOG",
+      "adtType": "TABL/DT",
+      "description": "Log of synced Parcel Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZPAR_SYNC_LOG.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPAR_TRC_H",
+      "adtType": "TABL/DT",
+      "description": "POC - ERP Parcel Data Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZPAR_TRC_H.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPAR_TRC_P",
+      "adtType": "TABL/DT",
+      "description": "POC - ERP Parcel Data - Packages",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZPAR_TRC_P.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPOS",
+      "adtType": "TABL/DT",
+      "description": "Purchase Order Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZPOS.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZQAD_POLL_LOG",
+      "adtType": "TABL/DT",
+      "description": "Log for QAD Shipment Polling",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZQAD_POLL_LOG.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZSOS",
+      "adtType": "TABL/DT",
+      "description": "Sales Order Table",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/TABL_DT/ZSOS.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZZSD_UI5R",
+      "adtType": "UIAD/TYP",
+      "description": "Fiori application repo",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/UIAD_TYP/ZZSD_UI5R.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZCZLIKPCITY_V",
+      "adtType": "VIEW/DV",
+      "description": "Deliveries aggregated by City",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/ZCZLIKPCITY_V.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZIQADPOLLLOG",
+      "adtType": "VIEW/DV",
+      "description": "Polling Log for QAD Shipments",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/ZIQADPOLLLOG.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZVCUPPARTRC",
+      "adtType": "VIEW/DV",
+      "description": "Interface View for Parcel Tracking Details",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/ZVCUPPARTRC.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZVDELREQH",
+      "adtType": "VIEW/DV",
+      "description": "Interface View for Delivery Request Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/ZVDELREQH.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZVPARTRCH",
+      "adtType": "VIEW/DV",
+      "description": "Interface View for Parcel Tracking Header",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/ZVPARTRCH.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_I_PARDATA_VW",
+      "adtType": "VIEW/DV",
+      "description": "Joined Parcel Header, Package, and Delivery Data",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/Z_I_PARDATA_VW.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_I_PURCHASEO",
+      "adtType": "VIEW/DV",
+      "description": "Purchase Order Interface View",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/Z_I_PURCHASEO.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_I_SALESO",
+      "adtType": "VIEW/DV",
+      "description": "Sales Order Interface View",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/Z_I_SALESO.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "Z_ZLIKP_V",
+      "adtType": "VIEW/DV",
+      "description": "ZLIKP odata service",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/VIEW_DV/Z_ZLIKP_V.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZZSD",
+      "adtType": "WAPA/WO",
+      "description": "Fiori application repo",
+      "packageName": "ZZSD",
+      "path": "btp-content/abap/ZZSD/WAPA_WO/ZZSD.abap",
+      "status": "skipped"
+    }
+  ],
+  "failures": [
+    {
+      "name": "ZCL_BATCH_SCHEDULE",
+      "adtType": "APLO/TYP",
+      "sourceError": "Object type APLO/TYP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: APLO/TYP"
+    },
+    {
+      "name": "ZC_MY_NEW_TABLE",
+      "adtType": "BDEF/BDO",
+      "sourceError": "Object type BDEF/BDO does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: BDEF/BDO"
+    },
+    {
+      "name": "ZI_MY_NEW_TABLE",
+      "adtType": "BDEF/BDO",
+      "sourceError": "Object type BDEF/BDO does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: BDEF/BDO"
+    },
+    {
+      "name": "Z_I_PO_M",
+      "adtType": "BDEF/BDO",
+      "sourceError": "Object type BDEF/BDO does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: BDEF/BDO"
+    },
+    {
+      "name": "Z_I_SO_M",
+      "adtType": "BDEF/BDO",
+      "sourceError": "Object type BDEF/BDO does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: BDEF/BDO"
+    },
+    {
+      "name": "ZZSD",
+      "adtType": "FUGR/F",
+      "sourceError": "Object type FUGR/F does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: FUGR/F"
+    },
+    {
+      "name": "ZQAD_BINDING",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_PO_M_O4",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_SO_M_04",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI",
+      "adtType": "G4BA",
+      "sourceError": "Object type G4BA does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: G4BA"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD",
+      "adtType": "HTTP",
+      "sourceError": "Object type HTTP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: HTTP"
+    },
+    {
+      "name": "Z_DELIVERY_JOB",
+      "adtType": "HTTP",
+      "sourceError": "Object type HTTP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: HTTP"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC",
+      "adtType": "HTTP",
+      "sourceError": "Object type HTTP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: HTTP"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001_BE",
+      "adtType": "IWOM",
+      "sourceError": "Object type IWOM does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: IWOM"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001",
+      "adtType": "IWSG",
+      "sourceError": "Object type IWSG does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: IWSG"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2                 0001",
+      "adtType": "IWSV",
+      "sourceError": "Object type IWSV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: IWSV"
+    },
+    {
+      "name": "ZMSG_QAD_OUTPUT",
+      "adtType": "MSAG/N",
+      "sourceError": "Object type MSAG/N does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: MSAG/N"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_0001",
+      "adtType": "OA2S",
+      "sourceError": "Object type OA2S does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: OA2S"
+    },
+    {
+      "name": "ZCL_JOB_LOG",
+      "adtType": "SAJC",
+      "sourceError": "Object type SAJC does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJC"
+    },
+    {
+      "name": "Z_QAS_JOBCAT",
+      "adtType": "SAJC",
+      "sourceError": "Object type SAJC does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJC"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_LOG",
+      "adtType": "SAJT",
+      "sourceError": "Object type SAJT does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJT"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_QAD",
+      "adtType": "SAJT",
+      "sourceError": "Object type SAJT does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJT"
+    },
+    {
+      "name": "Z_JOB_TEMPLATE_QAD_AU",
+      "adtType": "SAJT",
+      "sourceError": "Object type SAJT does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJT"
+    },
+    {
+      "name": "Z_DB_ACCESS_SCENARIO",
+      "adtType": "SCO1",
+      "sourceError": "Object type SCO1 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO1"
+    },
+    {
+      "name": "Z_OSAPIENS_EUDR_OUTBOUND_CS",
+      "adtType": "SCO1",
+      "sourceError": "Object type SCO1 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO1"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD_HTTP",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "ZQAD_BINDING_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_IWSG",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_DELIVERY_JOB_HTTP",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC_HTTP",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_PO_M_O4_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_SO_M_04_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI_0001_G4BA",
+      "adtType": "SCO2",
+      "sourceError": "Object type SCO2 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SCO2"
+    },
+    {
+      "name": "Z_BC_PARCEL_DATA",
+      "adtType": "SIA1",
+      "sourceError": "Object type SIA1 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA1"
+    },
+    {
+      "name": "ZABAP_FILE_UPLOAD_HTTP_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "ZCL_JOB_LOG_SAJC",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "ZQAD_BINDING_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2_IWSG_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI_00_00001_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_DELIVERY_JOB_HTTP_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_HTTP_UPLOAD_SVC_HTTP_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_PARCEL_DATA_IAM_UI5A",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_QAS_JOBCAT_SAJC",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_PO_M_O4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_SO_M_04_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI_0001_G4BA_IBS",
+      "adtType": "SIA6",
+      "sourceError": "Object type SIA6 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA6"
+    },
+    {
+      "name": "Z_BC_PARCEL_DATA_0001",
+      "adtType": "SIA7",
+      "sourceError": "Object type SIA7 does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SIA7"
+    },
+    {
+      "name": "ZZSD           907RM5PM0WS1BRG2HAYGJYC1N",
+      "adtType": "SICF/TYP",
+      "sourceError": "Object type SICF/TYP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SICF/TYP"
+    },
+    {
+      "name": "ZQAD_BINDING",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC_V2",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE_O4_UI",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_O4",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_PARCEL_DATA_V4",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_PO_M_O4",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_SO_M_04",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_O4_UI",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "Z_UI_ZLIKP_O4_UI",
+      "adtType": "SRVB/SVB",
+      "sourceError": "Object type SRVB/SVB does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVB/SVB"
+    },
+    {
+      "name": "ZSC_ECC_PARCEL",
+      "adtType": "SRVC/SVM",
+      "sourceError": "Object type SRVC/SVM does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVC/SVM"
+    },
+    {
+      "name": "ZI_QAD_POLL_LOG",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "ZUI_CONFIG_SYNC",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "ZUI_MY_NEW_TABLE",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "ZUI_YOURSERVICENAME_O4_UI",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_API_PARCEL_DATA",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_API_PRODUCT_INFO",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_COMPANYCODE_SD",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_PO_M_SD",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_PRODUCT_INFO_V4",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_SO_M_SD",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_SO_STATUS_SD",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "Z_UI_ZLIKP",
+      "adtType": "SRVD/SRV",
+      "sourceError": "Object type SRVD/SRV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SRVD/SRV"
+    },
+    {
+      "name": "08E6ACF5AA0D34933CED4B27CD9038HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "1DF236A747255DE85C4C8368052B88HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "262392740F96CE96BC5EAE50086932HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "26412EB0C11E5305D08FC3D7B83758HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "2BA7106608DE15E093EC827940AD33HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "44DD261F6B042CC394707277F03064HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "4E61020D236FB009A225791D84C548HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "6905B721A19395D21FB7192AFEEED0HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "6A63613780DC87286A01396CE46ECAHT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "717F676731337B62FDB4BB700FAC95HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "7B319D31DD92B772AA0170E9D9DE2BHT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "835C44E8FDB89CF894B76EDA04EE2EHT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "BC4A890B7096A4F436F560A89B35D0HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "DACCCB69C3E5CAB2542D1927F5D929HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "E61058B7522D7B0546431862D893C4HT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "FD76BB21DC9156E6A700C073641FBDHT",
+      "adtType": "SUSH",
+      "sourceError": "Object type SUSH does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SUSH"
+    },
+    {
+      "name": "ZZSD_UI5R",
+      "adtType": "UIAD/TYP",
+      "sourceError": "Object type UIAD/TYP does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: UIAD/TYP"
+    },
+    {
+      "name": "ZCZLIKPCITY_V",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "ZIQADPOLLLOG",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "ZVCUPPARTRC",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "ZVDELREQH",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "ZVPARTRCH",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "Z_I_PARDATA_VW",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "Z_I_PURCHASEO",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "Z_I_SALESO",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "Z_ZLIKP_V",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    },
+    {
+      "name": "ZZSD",
+      "adtType": "WAPA/WO",
+      "sourceError": "Object type WAPA/WO does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: WAPA/WO"
+    }
+  ]
+}

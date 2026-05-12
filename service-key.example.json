@@ -1,0 +1,9 @@
+{
+  "url": "https://your-instance.abap.cloud.sap",
+  "client": "100",
+  "uaa": {
+    "url": "https://your-subaccount.authentication.eu10.hana.ondemand.com",
+    "clientid": "sb-your-client-id",
+    "clientsecret": "your-client-secret"
+  }
+}

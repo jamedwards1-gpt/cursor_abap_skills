@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "btp:auth": "sap-abap-auth auth -o .secrets/btp-abap.env",
+    "btp:probe": "node scripts/probe-adt.mjs",
+    "btp:sync-package": "node scripts/sync-abap-package.mjs"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,8 @@
     "@sap/cds": "^9.9.1"
   },
   "devDependencies": {
+    "@mcp-abap-adt/adt-clients": "^5.4.1",
+    "@mcp-abap-adt/connection": "^1.8.0",
     "@sap/cds-dk": "^9.9.1"
   }
 }

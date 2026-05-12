@@ -1,0 +1,97 @@
+@EndUserText.label : 'Delivery Header Table (LIKP Replica)'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zlikp {
+
+  key client : abap.clnt not null;
+  key vbeln  : abap.char(10) not null;
+  ernam      : abap.char(12);
+  erzet      : abap.tims;
+  erdat      : abap.dats;
+  bzirk      : abap.char(6);
+  vstel      : abap.char(4);
+  vkorg      : abap.char(4);
+  lfart      : abap.char(4);
+  autlf      : abap.char(1);
+  kzazu      : abap.char(1);
+  wadat      : abap.dats;
+  lddat      : abap.dats;
+  tddat      : abap.dats;
+  lfdat      : abap.dats;
+  kodat      : abap.dats;
+  ablad      : abap.char(25);
+  inco1      : abap.char(3);
+  inco2      : abap.char(28);
+  expkz      : abap.char(1);
+  route      : abap.char(6);
+  faksk      : abap.char(2);
+  lifsk      : abap.char(2);
+  vbtyp      : abap.char(1);
+  knfak      : abap.char(2);
+  tpqua      : abap.char(1);
+  tpgrp      : abap.char(4);
+  lprio      : abap.numc(2);
+  vsbed      : abap.char(2);
+  kunnr      : abap.char(10);
+  kunag      : abap.char(10);
+  kdgrp      : abap.char(2);
+  stzkl      : abap.dec(3,2);
+  stzzu      : abap.dec(3,0);
+  voleh      : abap.unit(3);
+  anzpk      : abap.numc(5);
+  berot      : abap.char(20);
+  lfuhr      : abap.tims;
+  grulg      : abap.char(4);
+  lstel      : abap.char(4);
+  tragr      : abap.char(4);
+  fkarv      : abap.char(4);
+  fkdat      : abap.dats;
+  perfk      : abap.char(2);
+  routa      : abap.char(6);
+  stafo      : abap.char(6);
+  kalsm      : abap.char(6);
+  knumv      : abap.char(10);
+  waerk      : abap.cuky;
+  vkbur      : abap.char(4);
+  vbeak      : abap.dec(6,0);
+  zukrl      : abap.char(2);
+  verur      : abap.char(40);
+  commn      : abap.char(10);
+  stwae      : abap.cuky;
+  stcur      : abap.dec(9,5);
+  exnum      : abap.char(10);
+  aenam      : abap.char(12);
+  aedat      : abap.dats;
+  lgnum      : abap.char(3);
+  lispl      : abap.char(1);
+  vkoiv      : abap.char(4);
+  vtwiv      : abap.char(2);
+  spaiv      : abap.char(2);
+  fkaiv      : abap.char(4);
+  pioiv      : abap.numc(2);
+  fkdiv      : abap.char(4);
+  kuniv      : abap.char(10);
+  kkber      : abap.char(4);
+  knkli      : abap.char(10);
+  grupp      : abap.char(3);
+  sbgrp      : abap.char(3);
+  ctlpc      : abap.char(3);
+  bolnr      : abap.char(35);
+  lifnr      : abap.char(10);
+  traty      : abap.char(4);
+  traid      : abap.char(20);
+  cmfre      : abap.dats;
+  cmngv      : abap.dats;
+  xabln      : abap.char(15);
+  bldat      : abap.dats;
+  wadat_ist  : abap.dats;
+  trspg      : abap.char(1);
+  tpsid      : abap.char(10);
+  lifex      : abap.char(35);
+  ternr      : abap.char(3);
+  kalsm_ch   : abap.char(6);
+  klief      : abap.char(10);
+
+}

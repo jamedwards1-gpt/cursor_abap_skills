@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "cds-mcp": {
+      "command": "npx",
+      "args": ["-y", "@cap-js/mcp-server"]
+    },
+    "abap-adt": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mcp-abap-adt/core",
+        "--transport=stdio",
+        "--env-path",
+        ".secrets/btp-abap.env"
+      ]
+    }
+  }
+}
