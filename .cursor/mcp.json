@@ -5,13 +5,13 @@
       "args": ["-y", "@cap-js/mcp-server"]
     },
     "abap-adt": {
-      "command": "npx",
+      "command": "node",
       "args": [
-        "-y",
-        "@mcp-abap-adt/core",
+        "node_modules/@mcp-abap-adt/core/bin/mcp-abap-adt.js",
         "--transport=stdio",
         "--env-path",
-        ".secrets/btp-abap.env"
+        ".secrets/btp-abap.env",
+        "--exposition=readonly,high"
       ]
     }
   }

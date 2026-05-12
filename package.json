@@ -6,7 +6,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "btp:auth": "sap-abap-auth auth -o .secrets/btp-abap.env",
     "btp:probe": "node scripts/probe-adt.mjs",
-    "btp:sync-package": "node scripts/sync-abap-package.mjs"
+    "btp:sync-package": "node scripts/sync-abap-package.mjs",
+    "btp:push-class": "node scripts/push-abap-class.mjs",
+    "btp:transport-task": "node scripts/create-transport-task.mjs",
+    "btp:transport-request": "node scripts/create-transport-request.mjs",
+    "btp:create-package": "node scripts/create-abap-package.mjs",
+    "btp:push-table": "node scripts/push-abap-table.mjs",
+    "btp:push-ddls": "node scripts/push-abap-ddls.mjs",
+    "btp:push-qad": "node scripts/push-qad-classes.mjs",
+    "btp:push-parcel": "node scripts/push-parcel-qad.mjs",
+    "btp:bootstrap-parcel": "node scripts/bootstrap-parcel-qad.mjs",
+    "btp:rebuild-parcel": "node scripts/rebuild-parcel-mirror.mjs",
+    "parcel:monitor": "npm --prefix parcel-monitor start",
+    "btp:adt": "mcp-abap-adt --transport=stdio --env-path .secrets/btp-abap.env --exposition=readonly,high"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +31,7 @@
   "devDependencies": {
     "@mcp-abap-adt/adt-clients": "^5.4.1",
     "@mcp-abap-adt/connection": "^1.8.0",
+    "@mcp-abap-adt/core": "^6.5.1",
     "@sap/cds-dk": "^9.9.1"
   }
 }

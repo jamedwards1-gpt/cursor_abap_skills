@@ -45,6 +45,32 @@ export function loadAdtSession(envPath = process.env.BTP_ADT_ENV || '.secrets/bt
   return { connection, env, envPath: resolvedPath };
 }
 
+export function resolveTransportOwner(env, fallback = '') {
+  if (process.env.BTP_ADT_TRANSPORT_OWNER) {
+    return process.env.BTP_ADT_TRANSPORT_OWNER;
+  }
+
+  if (env?.SAP_USERNAME) {
+    return env.SAP_USERNAME;
+  }
+
+  const token = env?.SAP_JWT_TOKEN;
+  if (!token) {
+    return fallback;
+  }
+
+  try {
+    const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64url').toString('utf8'));
+    const candidate = payload.user_name || payload.user_id || fallback;
+    if (/^[A-Z]{2}\d{10}$/.test(candidate)) {
+      return candidate;
+    }
+    return fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 export async function connectAdtSession(session) {
   await session.connection.connect();
   return session;

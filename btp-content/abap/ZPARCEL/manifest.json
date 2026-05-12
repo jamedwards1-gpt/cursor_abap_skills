@@ -1,0 +1,111 @@
+{
+  "syncedAt": "2026-05-12T23:04:09.186Z",
+  "packageName": "ZPARCEL",
+  "objectCount": 12,
+  "objects": [
+    {
+      "name": "ZCL_PARCEL_POLL_UI_HTTP",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_POLL_UI_HTTP",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_POLL_UI_HTTP.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PARCEL_QAD_BG_JOB",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_QAD_BG_JOB",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_BG_JOB.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PARCEL_QAD_DISCOVER",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_QAD_DISCOVER",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_DISCOVER.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PARCEL_QAD_POLL",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_QAD_POLL",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_POLL.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PARCEL_QAD_QUERY",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_QAD_QUERY",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_QUERY.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCL_PARCEL_QAD_SCHEDULE",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_PARCEL_QAD_SCHEDULE",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_SCHEDULE.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZCX_PARCEL_QAD_ERROR",
+      "adtType": "CLAS/OC",
+      "description": "ZCX_PARCEL_QAD_ERROR",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCX_PARCEL_QAD_ERROR.clas.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZI_PARCEL_POLL_LOG",
+      "adtType": "DDLS/DF",
+      "description": "Polling Log for Parcel QAD shipments",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/DDLS_DF/ZI_PARCEL_POLL_LOG.asddls",
+      "status": "source"
+    },
+    {
+      "name": "ZPARCEL_POLL_LOG",
+      "adtType": "TABL/DT",
+      "description": "Parcel QAD shipment polling log",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_POLL_LOG.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPARCEL_TRC_H",
+      "adtType": "TABL/DT",
+      "description": "ZPARCEL_TRC_H",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_TRC_H.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZPARCEL_TRC_P",
+      "adtType": "TABL/DT",
+      "description": "ZPARCEL_TRC_P",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_TRC_P.tabl.abap",
+      "status": "source"
+    },
+    {
+      "name": "ZIPARCELPOLLLOG",
+      "adtType": "VIEW/DV",
+      "description": "Polling Log for Parcel QAD shipments",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/VIEW_DV/ZIPARCELPOLLLOG.abap",
+      "status": "skipped"
+    }
+  ],
+  "failures": [
+    {
+      "name": "ZIPARCELPOLLLOG",
+      "adtType": "VIEW/DV",
+      "sourceError": "Object type VIEW/DV does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: VIEW/DV"
+    }
+  ]
+}
