@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.abap": "abap",
+    "*.clas.abap": "abap",
+    "*.tabl.abap": "abap",
+    "*.asddls": "abap_cds",
+    "*.asbdef": "abap",
+    "*.asdcls": "abap_cds",
+    "*.asddlxs": "abap_cds"
+  }
+}
