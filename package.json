@@ -1,0 +1,19 @@
+{
+  "name": "sap-btp-sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@cap-js/sqlite": "^2.4.0",
+    "@sap/cds": "^9.9.1"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^9.9.1"
+  }
+}
