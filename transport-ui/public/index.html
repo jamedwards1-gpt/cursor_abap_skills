@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADT transport UI</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --border: #2d3a4d;
+      --text: #e6edf3;
+      --muted: #8b9cb3;
+      --accent: #58a6ff;
+      --ok: #3fb950;
+      --warn: #d29922;
+      --err: #f85149;
+      --mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    header h1 { margin: 0 0 0.35rem; font-size: 1.15rem; font-weight: 600; }
+    header p { margin: 0; color: var(--muted); font-size: 0.85rem; }
+    main { max-width: 1200px; margin: 0 auto; padding: 1rem 1.25rem 2rem; }
+    nav.tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    nav.tabs button {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    nav.tabs button:hover { border-color: var(--accent); }
+    nav.tabs button.active {
+      background: #234;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    section.panel {
+      display: none;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+    section.panel.active { display: block; }
+    h2 { margin: 0 0 0.75rem; font-size: 1rem; color: var(--accent); }
+    h3 { margin: 1rem 0 0.5rem; font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+    label { display: block; margin: 0.5rem 0 0.2rem; color: var(--muted); font-size: 0.8rem; }
+    input[type="text"], textarea, select {
+      width: 100%;
+      max-width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 0.45rem 0.55rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    textarea.tall { min-height: 220px; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end; }
+    .row > * { flex: 1; min-width: 140px; }
+    .row .shrink { flex: 0 0 auto; }
+    button.primary, button.secondary {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      margin-right: 0.4rem;
+    }
+    button.primary {
+      background: var(--accent);
+      color: #0a0e14;
+      border-color: var(--accent);
+    }
+    button.secondary { background: #2a3544; color: var(--text); }
+    button.primary:hover { filter: brightness(1.08); }
+    button.secondary:hover { border-color: var(--accent); }
+    pre.out {
+      margin: 0.75rem 0 0;
+      padding: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: auto;
+      max-height: 360px;
+      font-size: 0.78rem;
+      font-family: var(--mono);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    table.data {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 0.5rem;
+    }
+    table.data th, table.data td {
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.45rem;
+      text-align: left;
+    }
+    table.data th { background: #1e2836; color: var(--muted); font-weight: 600; }
+    .badge { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 4px; font-size: 0.75rem; }
+    .badge.ok { background: #1a3d28; color: var(--ok); }
+    .badge.err { background: #3d1a1a; color: var(--err); }
+    .badge.warn { background: #3d351a; color: var(--warn); }
+    .hint { color: var(--muted); font-size: 0.8rem; margin-top: 0.35rem; }
+    .danger { border-color: var(--err); background: #2a1515; padding: 0.75rem; border-radius: 6px; margin-bottom: 0.75rem; color: #f8b4b2; font-size: 0.85rem; }
+    .suggest-wrap { position: relative; max-width: 560px; }
+    .suggest-panel {
+      position: absolute; left: 0; right: 0; top: 100%; z-index: 20; margin-top: 2px;
+      max-height: 260px; overflow: auto; background: var(--panel); border: 1px solid var(--border);
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); display: none;
+    }
+    .suggest-panel.open { display: block; }
+    .suggest-row { padding: 0.4rem 0.55rem; cursor: pointer; font-size: 0.8rem; border-bottom: 1px solid var(--border); font-family: var(--mono); }
+    .suggest-row:hover { background: #243044; }
+    .suggest-meta { color: var(--muted); font-size: 0.72rem; margin-left: 0.35rem; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
+    ul.basket { list-style: none; margin: 0.5rem 0 0; padding: 0; max-height: 200px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; }
+    ul.basket li { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border); font-size: 0.82rem; font-family: var(--mono); }
+    ul.basket li:last-child { border-bottom: none; }
+    .scroll-table { max-height: 280px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ADT transport helper</h1>
+    <p>Local only — JWT stays in <code>.secrets/btp-abap.env</code> on the server. Default <code>http://127.0.0.1:3980</code></p>
+  </header>
+  <main>
+    <div id="configBar" class="hint" style="margin-bottom:1rem;"></div>
+    <nav class="tabs" id="tabs"></nav>
+
+    <section class="panel active" data-tab="connection">
+      <h2>Connection</h2>
+      <p class="hint"><strong>Test ADT connection</strong> only checks JWT + URL — <code>ok: true</code> means the API accepted the token, not Eclipse browser login. If transport lists stay empty, read the yellow <strong>Transports</strong> hint below.</p>
+      <div id="identityStrip" class="hint" style="margin:0.75rem 0;padding:0.6rem 0.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);"></div>
+      <button type="button" class="primary" id="btnReloadConfig">Reload config</button>
+      <button type="button" class="secondary" id="btnTestConn">Test ADT connection</button>
+      <pre class="out" id="outConnection" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="abap">
+      <h2>ABAP “terminal” and HTTP</h2>
+      <p class="hint">
+        <strong>There is no ADT REST equivalent of the Eclipse ABAP terminal</strong> for arbitrary statements on BTP ABAP Environment.
+        The ADT HTTP APIs are things like object CRUD, CTS, search, activation — not a REPL. The <code>@mcp-abap-adt/adt-clients</code> “SQL Data Preview”
+        helper is documented as <strong>blocked for JWT/XSUAA</strong> on ABAP Cloud, so we do not expose a SQL runner here.
+      </p>
+      <p class="hint">
+        <strong>First-principles workaround:</strong> run logic <em>inside</em> the system as an
+        <code>IF_HTTP_SERVICE_EXTENSION</code> handler (you already do this with <code>ZCL_PARCEL_POLL_UI_HTTP</code>), publish it as an HTTP service,
+        then call it with the same identity as ADT (JWT in <code>.secrets/btp-abap.env</code>) using the safe GET proxy below — path only, allowlisted prefixes.
+      </p>
+      <h3>Example class in this repo</h3>
+      <p class="hint">
+        <code>ZCL_TRANSPORT_UI_STATIC_JSON</code> (<code>btp-content/abap/ZPARCEL/CLAS_OC/…</code>) returns a tiny JSON document on GET.
+        Push it to Steampunk, create an HTTP Service in ADT that references the class, publish, then paste the <strong>path</strong> part of the published URL here
+        (must start with <code>/sap/bc/</code>, <code>/sap/opu/</code>, or <code>/default_host/</code>).
+      </p>
+      <h3>Safe GET (through server JWT)</h3>
+      <label for="sapGetPath">Path (starts with /)</label>
+      <input type="text" id="sapGetPath" placeholder="/sap/bc/http/sap/…" autocomplete="off" />
+      <label for="sapGetAccept">Accept header (optional)</label>
+      <input type="text" id="sapGetAccept" value="application/json, */*" />
+      <button type="button" class="primary" id="btnSapGet">GET via proxy</button>
+      <pre class="out" id="outSapGet" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="transport">
+      <h2>Transport lookup</h2>
+      <div class="row">
+        <div>
+          <label for="trInput">Transport / task number</label>
+          <input type="text" id="trInput" placeholder="H01K900032" autocomplete="off" />
+        </div>
+        <div class="shrink">
+          <button type="button" class="primary" id="btnLoadTr">Load request</button>
+        </div>
+      </div>
+      <h3>Request metadata (ADT CTS)</h3>
+      <div id="trMeta"></div>
+      <h3>Tasks</h3>
+      <div id="trTasks"></div>
+      <div class="row" style="margin-top:0.75rem;">
+        <div>
+          <label for="taskPeek">Load organizer for task</label>
+          <input type="text" id="taskPeek" placeholder="H01K900033" />
+        </div>
+        <div class="shrink">
+          <button type="button" class="secondary" id="btnLoadTask">Load task XML</button>
+        </div>
+      </div>
+      <h3>Organizer (parsed objects)</h3>
+      <div id="orgSummary"></div>
+      <div id="orgObjects"></div>
+      <label>XML preview (truncated)</label>
+      <pre class="out" id="orgXml" style="max-height:240px;"></pre>
+
+      <h3>Resolve task (reuse / pick)</h3>
+      <div class="row">
+        <div>
+          <label>Request</label>
+          <input type="text" id="resolveReq" placeholder="H01K900032" />
+        </div>
+        <div>
+          <label>Owner (optional)</label>
+          <input type="text" id="resolveOwner" placeholder="from env / JWT" />
+        </div>
+        <div>
+          <label>Existing task (optional, skips resolve)</label>
+          <input type="text" id="resolveTask" placeholder="" />
+        </div>
+        <div class="shrink">
+          <button type="button" class="secondary" id="btnResolve">POST resolve-task</button>
+        </div>
+      </div>
+      <pre class="out" id="outResolve" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="overview">
+      <h2>All my transports</h2>
+      <p class="hint">
+        Uses ADT <code>GET …/cts/transportrequests?user=…</code> for <strong>your BTP user id</strong> (e.g. <code>CB9980000010</code>), then loads each request.
+        Leave <strong>User</strong> empty or use <strong>Use env user</strong> so we take the id from JWT / <code>SAP_USERNAME</code> — partial values like <code>C</code> are replaced automatically.
+        <strong>Status</strong> is only a short ADT code such as <code>D</code> (modifiable); do not paste your user id or a transport number there.
+      </p>
+      <div class="row">
+        <div><label>User (BTP id)</label><input type="text" id="ovUser" placeholder="blank = from JWT / env" autocomplete="off" /></div>
+        <div><label>Status (optional)</label><input type="text" id="ovStatus" placeholder="D or R — not CB998…" autocomplete="off" /></div>
+        <div><label>Max requests</label><input type="text" id="ovMax" value="50" /></div>
+        <div><label>Parallel fetches</label><input type="text" id="ovConc" value="4" /></div>
+        <div class="shrink"><button type="button" class="secondary" id="btnOvUserEnv">Use env user</button></div>
+      </div>
+      <label><input type="checkbox" id="ovOrg" checked /> Include organizer objects (request level)</label>
+      <label><input type="checkbox" id="ovTaskOrg" /> Include per-task organizer (slower)</label>
+      <button type="button" class="primary" id="btnOvLoad">Load overview</button>
+      <p class="hint" id="ovHint"></p>
+      <div id="ovWrap"></div>
+    </section>
+
+    <section class="panel" data-tab="catalog">
+      <h2>Mini STMS — catalog &amp; basket</h2>
+      <p class="hint">
+        Search uses ADT quick search; package index uses package explorer. <strong>Add to basket</strong> then assign with a <strong>task</strong> number (modifiable task).
+        Supported for assign: CLAS/*, INTF/*, PROG/P, TABL/*, DDLS/* — lock with <code>corrNr</code> then unlock (same pattern as ADT recording).
+      </p>
+
+      <div class="grid2">
+        <div>
+          <h3>Inbox (transport list)</h3>
+          <div class="row">
+            <div><label>User</label><input type="text" id="catInboxUser" placeholder="from config after load" /></div>
+            <div><label>Status (optional)</label><input type="text" id="catInboxStatus" placeholder="D — not user id" /></div>
+            <div class="shrink"><button type="button" class="primary" id="btnCatInbox">Load list</button></div>
+          </div>
+          <div class="scroll-table" id="catInboxWrap"></div>
+        </div>
+        <div>
+          <h3>Target task</h3>
+          <div class="row">
+            <div><label>Task (corrNr)</label><input type="text" id="catTask" placeholder="H01K900035" /></div>
+            <div><label>Parent request (for class lock retry)</label><input type="text" id="catRequest" placeholder="H01K900034" /></div>
+          </div>
+          <h3>Basket</h3>
+          <ul class="basket" id="catBasket"></ul>
+          <button type="button" class="secondary" id="btnCatBasketClear">Clear basket</button>
+          <button type="button" class="primary" id="btnCatAssign">Assign basket → task</button>
+          <pre class="out" id="outCatAssign" style="display:none;"></pre>
+        </div>
+      </div>
+
+      <h3>Quick search</h3>
+      <div class="row">
+        <div class="suggest-wrap">
+          <label for="catSearch">Name pattern</label>
+          <input type="text" id="catSearch" placeholder="ZCL_MY*" autocomplete="off" />
+          <div class="suggest-panel" id="catSuggest"></div>
+        </div>
+        <div><label>ADT object type filter (optional)</label><input type="text" id="catSearchType" placeholder="CLAS/OC" /></div>
+        <div class="shrink"><button type="button" class="secondary" id="btnCatSearch">Search</button></div>
+      </div>
+
+      <h3>Package index</h3>
+      <div class="row">
+        <div><label>Package</label><input type="text" id="catPkg" placeholder="ZPARCEL" /></div>
+        <div class="shrink"><label><input type="checkbox" id="catPkgSub" checked /> Subpackages</label></div>
+        <div class="shrink"><button type="button" class="secondary" id="btnCatPkg">Load package</button></div>
+      </div>
+      <div class="scroll-table" id="catPkgWrap"></div>
+
+      <h3>Manual row</h3>
+      <div class="row">
+        <div><label>Name</label><input type="text" id="catManName" /></div>
+        <div><label>ADT type</label><input type="text" id="catManType" placeholder="CLAS/OC" list="catTypeList" /></div>
+        <datalist id="catTypeList">
+          <option value="CLAS/OC"></option>
+          <option value="INTF/OI"></option>
+          <option value="PROG/P"></option>
+          <option value="TABL/DT"></option>
+          <option value="DDLS/DF"></option>
+        </datalist>
+        <div class="shrink"><button type="button" class="secondary" id="btnCatManAdd">Add to basket</button></div>
+      </div>
+    </section>
+
+    <section class="panel" data-tab="create">
+      <h2>Create transport</h2>
+      <h3>New Workbench request</h3>
+      <label>Description</label>
+      <input type="text" id="crReqDesc" placeholder="Feature X" />
+      <button type="button" class="primary" id="btnCreateRequest">Run create-transport-request</button>
+      <h3>New task on existing request</h3>
+      <div class="row">
+        <div><label>Request or task</label><input type="text" id="crTaskTr" /></div>
+        <div><label>Owner</label><input type="text" id="crTaskOwner" /></div>
+      </div>
+      <label>Description</label>
+      <input type="text" id="crTaskDesc" value="Cursor ADT update" />
+      <label>tm:type (optional)</label>
+      <input type="text" id="crTaskType" placeholder="Development/Correction" />
+      <label><input type="checkbox" id="crTaskList" /> List tasks only (--list)</label>
+      <button type="button" class="primary" id="btnCreateTask">Run create-transport-task</button>
+      <pre class="out" id="outCreate" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="push">
+      <h2>Push from pasted source</h2>
+      <p class="hint">Writes a temp file and runs the same push scripts as the CLI. Set transport (and task where required).</p>
+
+      <h3>Class</h3>
+      <div class="row">
+        <div><label>Class name</label><input type="text" id="pcName" placeholder="ZCL_MY_CLASS" /></div>
+        <div><label>Transport</label><input type="text" id="pcTr" /></div>
+        <div><label>Task</label><input type="text" id="pcTk" /></div>
+        <div><label>Owner (optional)</label><input type="text" id="pcOwner" /></div>
+      </div>
+      <label><input type="checkbox" id="pcCreate" /> --create</label>
+      <label><input type="checkbox" id="pcRecreate" /> --recreate</label>
+      <label>Source (.clas.abap)</label>
+      <textarea class="tall" id="pcSrc" placeholder="*&quot;*&quot; class definition ..."></textarea>
+      <button type="button" class="primary" id="btnPushClass">push-abap-class</button>
+
+      <h3>Table</h3>
+      <div class="row">
+        <div><label>Table</label><input type="text" id="ptName" /></div>
+        <div><label>Package</label><input type="text" id="ptPkg" value="ZPARCEL" /></div>
+        <div><label>Transport</label><input type="text" id="ptTr" /></div>
+        <div><label>Task (required)</label><input type="text" id="ptTk" /></div>
+        <div><label>Owner</label><input type="text" id="ptOwner" /></div>
+      </div>
+      <label>Source (.tabl.abap)</label>
+      <textarea class="tall" id="ptSrc"></textarea>
+      <button type="button" class="primary" id="btnPushTable">push-abap-table</button>
+
+      <h3>CDS / DDLS</h3>
+      <div class="row">
+        <div><label>View name</label><input type="text" id="pdName" /></div>
+        <div><label>Transport</label><input type="text" id="pdTr" /></div>
+        <div><label>Task</label><input type="text" id="pdTk" /></div>
+        <div><label>Owner</label><input type="text" id="pdOwner" /></div>
+      </div>
+      <label><input type="checkbox" id="pdCreate" /> --create</label>
+      <label>Source (.asddls)</label>
+      <textarea class="tall" id="pdSrc"></textarea>
+      <button type="button" class="primary" id="btnPushDdls">push-abap-ddls</button>
+
+      <pre class="out" id="outPush" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="parcel">
+      <h2>Parcel consolidate</h2>
+      <div class="row">
+        <div><label>Request number</label><input type="text" id="parRq" /></div>
+        <div><label>Task (optional)</label><input type="text" id="parTk" /></div>
+        <div><label>Owner</label><input type="text" id="parOwner" /></div>
+      </div>
+      <button type="button" class="primary" id="btnParcel">parcel-consolidate-transport</button>
+      <pre class="out" id="outParcel" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="children">
+      <h2>Transport children (CLI)</h2>
+      <div class="row">
+        <div><label>Transport</label><input type="text" id="chTr" /></div>
+        <div><label>Owner (optional)</label><input type="text" id="chOwner" /></div>
+        <div class="shrink"><label><input type="checkbox" id="chRaw" /> --raw</label></div>
+      </div>
+      <button type="button" class="primary" id="btnChildren">list-transport-children</button>
+      <pre class="out" id="outChildren" style="display:none;"></pre>
+    </section>
+
+    <section class="panel" data-tab="experiment">
+      <h2>Experiment: transport bind</h2>
+      <div class="danger">
+        This runs <code>experiment-transport-bind.mjs</code> against real transports. Only use on disposable requests/tasks you understand.
+      </div>
+      <div class="row">
+        <div><label>Class (default ZCL_PARCEL_QAD_SCHEDULE)</label><input type="text" id="exCn" /></div>
+        <div><label>BTP_EXPERIMENT_REQUEST</label><input type="text" id="exRq" value="H01K900034" /></div>
+        <div><label>BTP_EXPERIMENT_TASK</label><input type="text" id="exTk" value="H01K900035" /></div>
+        <div><label>Owner</label><input type="text" id="exOwner" /></div>
+      </div>
+      <label>Optional class source (temp file); leave empty to use repo class path in script</label>
+      <textarea id="exSrc" class="tall" placeholder="Leave empty for default behavior"></textarea>
+      <button type="button" class="primary" id="btnExperiment">Run experiment</button>
+      <pre class="out" id="outExperiment" style="display:none;"></pre>
+    </section>
+  </main>
+
+  <script>
+    const TAB_IDS = [
+      ['connection', 'Connection'],
+      ['abap', 'ABAP / HTTP'],
+      ['transport', 'Transport'],
+      ['overview', 'All transports'],
+      ['catalog', 'Mini STMS'],
+      ['create', 'Create TR / task'],
+      ['push', 'Push'],
+      ['parcel', 'Parcel'],
+      ['children', 'Children'],
+      ['experiment', 'Experiment'],
+    ];
+
+    function $(id) { return document.getElementById(id); }
+
+    function showPre(el, obj) {
+      el.style.display = 'block';
+      el.textContent = typeof obj === 'string' ? obj : JSON.stringify(obj, null, 2);
+    }
+
+    async function api(method, url, body) {
+      const opt = { method, headers: {} };
+      if (body !== undefined) {
+        opt.headers['Content-Type'] = 'application/json';
+        opt.body = JSON.stringify(body);
+      }
+      const res = await fetch(url, opt);
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { data = { raw: text }; }
+      if (!res.ok) {
+        const err = new Error(data.error || data.message || res.statusText);
+        err.detail = data;
+        throw err;
+      }
+      return data;
+    }
+
+    function esc(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function renderTransportPayload(data) {
+      const t = data.transport;
+      const org = data.organizer;
+      $('trMeta').innerHTML = `
+        <p><span class="badge ${t.status === 'D' ? 'ok' : 'warn'}">${esc(t.status)}</span>
+        <strong>${esc(t.number)}</strong> — ${esc(t.statusText || '')}</p>
+        <p class="hint">${esc(t.description || '')} · owner ${esc(t.owner || '')}</p>`;
+
+      if (t.tasks && t.tasks.length) {
+        const rows = t.tasks.map((x) => `<tr>
+          <td><code>${esc(x.number)}</code></td>
+          <td>${esc(x.owner)}</td>
+          <td>${esc(x.status)} ${esc(x.statusText || '')}</td>
+          <td>${esc(x.description)}</td>
+        </tr>`).join('');
+        $('trTasks').innerHTML = `<table class="data"><thead><tr><th>Task</th><th>Owner</th><th>Status</th><th>Desc</th></tr></thead><tbody>${rows}</tbody></table>`;
+      } else {
+        $('trTasks').innerHTML = '<p class="hint">No tasks in payload (try parent request number).</p>';
+      }
+
+      $('orgSummary').innerHTML = `
+        <p>Organizer HTTP <strong>${org.httpStatus}</strong> · flavor <code>${esc(org.flavor)}</code>
+        · XML bytes ${org.xmlBytes}${org.note ? ` — <span class="hint">${esc(org.note)}</span>` : ''}</p>`;
+      const objs = org.abapObjects || [];
+      if (objs.length) {
+        $('orgObjects').innerHTML = `<table class="data"><thead><tr><th>Name</th><th>Type</th><th>URI</th></tr></thead><tbody>
+          ${objs.map((o) => `<tr><td>${esc(o.name)}</td><td>${esc(o.type)}</td><td style="word-break:break-all">${esc(o.uri)}</td></tr>`).join('')}
+        </tbody></table>`;
+      } else {
+        $('orgObjects').innerHTML = '<p class="hint">No tm:abap_object rows parsed (common on BTP even when pushes succeed).</p>';
+      }
+      $('orgXml').textContent = org.xmlPreview || '';
+    }
+
+    function renderIdentity(id) {
+      const el = $('identityStrip');
+      if (!el || !id) {
+        return;
+      }
+      const bits = [];
+      if (id.displayUser) {
+        bits.push(`<strong>${esc(id.displayUser)}</strong> <span class="hint">(${esc(id.displaySource || 'unknown')})</span>`);
+      } else {
+        bits.push('<span class="hint">No display user parsed (add SAP_USERNAME to .env or use a JWT with user_name).</span>');
+      }
+      if (id.jwtEmail) {
+        bits.push(`<br/><span class="hint">Email (claim): ${esc(id.jwtEmail)}</span>`);
+      }
+      if (id.transportOwnerHint && id.transportOwnerHint !== id.displayUser) {
+        bits.push(`<br/><span class="hint">Transport owner hint (BTP-style id): <code>${esc(id.transportOwnerHint)}</code></span>`);
+      }
+      if (id.ctsHint) {
+        bits.push(
+          `<br/><span class="badge warn">Transports</span> <span class="hint">${esc(id.ctsHint)}</span>`,
+        );
+      }
+      bits.push(`<br/><span class="hint">${esc(id.authNote || '')}</span>`);
+      el.innerHTML = bits.join('');
+    }
+
+    async function loadConfig() {
+      try {
+        const c = await api('GET', '/api/config');
+        $('configBar').innerHTML = `
+          Env: <code>${esc(c.envPath)}</code>
+          · JWT: ${c.hasJwt ? '<span class="badge ok">present</span>' : '<span class="badge err">missing</span>'}
+          · URL: ${c.hasUrl ? '<span class="badge ok">present</span>' : '<span class="badge err">missing</span>'}
+          · client ${esc(c.sapClient)} · default package <code>${esc(c.packageDefault)}</code>
+          · owner hint <code>${esc(c.transportOwner || '(none)')}</code>`;
+        window.__cfg = c;
+        renderIdentity(c.identity);
+        const iu = $('catInboxUser');
+        if (iu && !iu.value.trim() && c.transportOwner) {
+          iu.value = c.transportOwner;
+        }
+        const ou = $('ovUser');
+        if (ou && !ou.value.trim() && c.transportOwner) {
+          ou.value = c.transportOwner;
+        }
+      } catch (e) {
+        $('configBar').innerHTML = `<span class="badge err">config</span> ${esc(e.message)}`;
+      }
+    }
+
+    function initTabs() {
+      const nav = $('tabs');
+      for (const [id, label] of TAB_IDS) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = label;
+        b.dataset.tab = id;
+        if (id === 'connection') b.classList.add('active');
+        b.addEventListener('click', () => {
+          nav.querySelectorAll('button').forEach((x) => x.classList.toggle('active', x.dataset.tab === id));
+          document.querySelectorAll('section.panel').forEach((p) => p.classList.toggle('active', p.dataset.tab === id));
+        });
+        nav.appendChild(b);
+      }
+    }
+
+    function execResultPre(prefix, r) {
+      return { code: r.code, stdout: r.stdout, stderr: r.stderr };
+    }
+
+    $('btnReloadConfig').addEventListener('click', loadConfig);
+    $('btnTestConn').addEventListener('click', async () => {
+      const el = $('outConnection');
+      try {
+        const x = await api('POST', '/api/connection/test', {});
+        renderIdentity(x.identity);
+        showPre(el, x);
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnSapGet').addEventListener('click', async () => {
+      const el = $('outSapGet');
+      try {
+        const path = $('sapGetPath').value.trim();
+        const accept = $('sapGetAccept').value.trim();
+        const x = await api('POST', '/api/sap-safe-get', { path, accept });
+        showPre(el, x);
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnLoadTr').addEventListener('click', async () => {
+      const tr = $('trInput').value.trim().toUpperCase();
+      if (!tr) return;
+      try {
+        const data = await api('GET', `/api/transports/${encodeURIComponent(tr)}`);
+        window.__lastTr = data;
+        renderTransportPayload(data);
+        $('resolveReq').value = data.transport.number || tr;
+      } catch (e) {
+        $('trMeta').innerHTML = `<p class="badge err">${esc(e.message)}</p>`;
+        $('trTasks').innerHTML = '';
+        $('orgSummary').innerHTML = '';
+        $('orgObjects').innerHTML = '';
+        $('orgXml').textContent = e.detail ? JSON.stringify(e.detail, null, 2) : '';
+      }
+    });
+
+    $('btnLoadTask').addEventListener('click', async () => {
+      const tr = $('trInput').value.trim().toUpperCase();
+      const task = $('taskPeek').value.trim().toUpperCase();
+      if (!tr || !task) return;
+      try {
+        const data = await api('GET', `/api/transports/${encodeURIComponent(tr)}/task/${encodeURIComponent(task)}`);
+        window.__lastTr = { transport: window.__lastTr?.transport, organizer: data.organizer, task: data.task };
+        $('orgSummary').innerHTML = `<p>Task <code>${esc(data.task)}</code> organizer snapshot</p>`;
+        const org = data.organizer;
+        $('orgSummary').innerHTML += `<p>HTTP <strong>${org.httpStatus}</strong> · ${esc(org.flavor)} · ${org.xmlBytes} bytes</p>`;
+        const objs = org.abapObjects || [];
+        $('orgObjects').innerHTML = objs.length
+          ? `<table class="data"><thead><tr><th>Name</th><th>Type</th><th>URI</th></tr></thead><tbody>
+            ${objs.map((o) => `<tr><td>${esc(o.name)}</td><td>${esc(o.type)}</td><td style="word-break:break-all">${esc(o.uri)}</td></tr>`).join('')}
+          </tbody></table>`
+          : '<p class="hint">No objects parsed.</p>';
+        $('orgXml').textContent = org.xmlPreview || '';
+      } catch (e) {
+        $('orgSummary').innerHTML = esc(e.message);
+      }
+    });
+
+    $('btnResolve').addEventListener('click', async () => {
+      const el = $('outResolve');
+      try {
+        const body = {
+          transportNumber: $('resolveReq').value.trim(),
+          owner: $('resolveOwner').value.trim(),
+          taskNumber: $('resolveTask').value.trim(),
+        };
+        const x = await api('POST', '/api/transports/resolve-task', body);
+        showPre(el, x);
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnCreateRequest').addEventListener('click', async () => {
+      const el = $('outCreate');
+      try {
+        const r = await api('POST', '/api/exec/create-request', { description: $('crReqDesc').value });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnCreateTask').addEventListener('click', async () => {
+      const el = $('outCreate');
+      try {
+        const r = await api('POST', '/api/exec/create-task', {
+          transport: $('crTaskTr').value,
+          owner: $('crTaskOwner').value.trim(),
+          description: $('crTaskDesc').value,
+          taskType: $('crTaskType').value.trim(),
+          listOnly: $('crTaskList').checked,
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnPushClass').addEventListener('click', async () => {
+      const el = $('outPush');
+      try {
+        const r = await api('POST', '/api/exec/push-class', {
+          className: $('pcName').value,
+          source: $('pcSrc').value,
+          transport: $('pcTr').value,
+          task: $('pcTk').value,
+          owner: $('pcOwner').value.trim(),
+          create: $('pcCreate').checked,
+          recreate: $('pcRecreate').checked,
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnPushTable').addEventListener('click', async () => {
+      const el = $('outPush');
+      try {
+        const r = await api('POST', '/api/exec/push-table', {
+          tableName: $('ptName').value,
+          source: $('ptSrc').value,
+          transport: $('ptTr').value,
+          task: $('ptTk').value,
+          package: $('ptPkg').value,
+          owner: $('ptOwner').value.trim(),
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnPushDdls').addEventListener('click', async () => {
+      const el = $('outPush');
+      try {
+        const r = await api('POST', '/api/exec/push-ddls', {
+          viewName: $('pdName').value,
+          source: $('pdSrc').value,
+          transport: $('pdTr').value,
+          task: $('pdTk').value,
+          owner: $('pdOwner').value.trim(),
+          create: $('pdCreate').checked,
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnParcel').addEventListener('click', async () => {
+      const el = $('outParcel');
+      try {
+        const r = await api('POST', '/api/exec/parcel-consolidate', {
+          request: $('parRq').value,
+          task: $('parTk').value,
+          owner: $('parOwner').value.trim(),
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnChildren').addEventListener('click', async () => {
+      const el = $('outChildren');
+      try {
+        const r = await api('POST', '/api/exec/transport-children', {
+          transport: $('chTr').value,
+          owner: $('chOwner').value.trim(),
+          raw: $('chRaw').checked,
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    $('btnExperiment').addEventListener('click', async () => {
+      const el = $('outExperiment');
+      try {
+        const r = await api('POST', '/api/exec/experiment-bind', {
+          className: $('exCn').value.trim(),
+          source: $('exSrc').value,
+          request: $('exRq').value,
+          task: $('exTk').value,
+          owner: $('exOwner').value.trim(),
+        });
+        showPre(el, execResultPre('', r));
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    function goToTransportTab(tr) {
+      $('trInput').value = tr || '';
+      document.querySelector('nav.tabs button[data-tab="transport"]')?.click();
+    }
+
+    $('btnOvUserEnv').addEventListener('click', () => {
+      const o = window.__cfg?.transportOwner || window.__cfg?.identity?.transportOwnerHint;
+      if (o) {
+        $('ovUser').value = o;
+      }
+    });
+
+    $('btnOvLoad').addEventListener('click', async () => {
+      const wrap = $('ovWrap');
+      const hint = $('ovHint');
+      wrap.innerHTML = '<p class="hint">Loading…</p>';
+      hint.innerHTML = '';
+      try {
+        const qs = new URLSearchParams();
+        const u = $('ovUser').value.trim();
+        if (u) qs.set('user', u);
+        const st = $('ovStatus').value.trim();
+        if (st) qs.set('status', st);
+        qs.set('max', String(Number($('ovMax').value) || 50));
+        qs.set('concurrency', String(Number($('ovConc').value) || 4));
+        if (!$('ovOrg').checked) qs.set('organizers', '0');
+        if ($('ovTaskOrg').checked) qs.set('taskOrganizers', '1');
+        const t0 = performance.now();
+        const data = await api('GET', `/api/transports-overview?${qs}`);
+        const ms = Math.round(performance.now() - t0);
+        if (data.listUserResolved) {
+          $('ovUser').value = data.listUserResolved;
+        }
+        if (data.statusFilterUsed) {
+          $('ovStatus').value = data.statusFilterUsed;
+        } else if (data.statusFilterInput && !data.statusFilterUsed) {
+          $('ovStatus').value = '';
+        }
+        const parts = [
+          `Loaded <strong>${data.fetched}</strong> / <strong>${data.listed}</strong> listed in ${ms} ms.`,
+          ` CTS user: <code>${esc(data.listUserResolved || data.user)}</code>`,
+          data.listUserResolution ? ` <span class="hint">(${esc(data.listUserResolution)})</span>` : '',
+          data.listUserIgnoredQuery
+            ? ` <span class="hint">· ignored partial query &quot;${esc(data.listUserIgnoredQuery)}&quot;</span>`
+            : '',
+          data.statusFilterInput && data.statusFilterInput !== (data.statusFilterUsed || '')
+            ? ` <span class="hint">· status &quot;${esc(data.statusFilterInput)}&quot; was not a valid ADT filter — listed all statuses</span>`
+            : '',
+          data.listParseStrategy ? ` <span class="hint">· list XML parser: ${esc(data.listParseStrategy)}</span>` : '',
+        ];
+        hint.innerHTML = parts.join('');
+
+        const reqs = data.requests || [];
+        if (data.listed === 0 && data.listRawPreviewSnippet) {
+          hint.innerHTML +=
+            '<br/><span class="hint">No transport rows parsed from list XML. Raw response preview:</span>';
+          wrap.innerHTML = `<pre class="out">${esc(data.listRawPreviewSnippet)}</pre>`;
+        } else {
+          wrap.innerHTML = reqs
+            .map((req) => {
+              const t = req.transport;
+              const org = req.organizer;
+              const tasks = (t && t.tasks) || [];
+              const taskRows = tasks
+                .map(
+                  (k) =>
+                    `<tr><td><code>${esc(k.number)}</code></td><td>${esc(k.owner)}</td><td>${esc(k.status)} ${esc(k.statusText || '')}</td><td>${esc(k.description || '')}</td></tr>`,
+                )
+                .join('');
+              const objs = (org && org.abapObjects) || [];
+              const objRows = objs
+                .map(
+                  (o) =>
+                    `<tr><td>${esc(o.name)}</td><td>${esc(o.type || '')}</td><td style="word-break:break-all">${esc(o.uri || '')}</td></tr>`,
+                )
+                .join('');
+              let taskOrgHtml = '';
+              if (req.taskOrganizers && req.taskOrganizers.length) {
+                taskOrgHtml = req.taskOrganizers
+                  .map((to) => {
+                    const rows = (to.abapObjects || [])
+                      .map(
+                        (o) =>
+                          `<tr><td>${esc(o.name)}</td><td>${esc(o.type || '')}</td><td style="word-break:break-all">${esc(o.uri || '')}</td></tr>`,
+                      )
+                      .join('');
+                    return `<details style="margin:0.35rem 0"><summary>Task <code>${esc(to.taskNumber)}</code> — ${to.objectCount ?? 0} objects${to.error ? ` <span class="badge err">${esc(to.error)}</span>` : ''}</summary><table class="data"><thead><tr><th>Name</th><th>Type</th><th>URI</th></tr></thead><tbody>${rows || '<tr><td colspan="3" class="hint">None parsed</td></tr>'}</tbody></table></details>`;
+                  })
+                  .join('');
+              }
+              return `<details class="ov-req" style="margin:0.5rem 0;border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.65rem;background:var(--bg)">
+  <summary style="cursor:pointer;font-weight:600"><code>${esc(req.number)}</code> ${esc((t && t.description) || req.listDescription || '')} <span class="hint">${esc((t && t.status) || req.listStatus || '')} ${esc((t && t.statusText) || req.listStatusText || '')}</span> ${org ? `<span class="hint">· ${org.objectCount} obj</span>` : ''}</summary>
+  ${req.error ? `<p class="badge err">${esc(req.error)}</p>` : ''}
+  ${t ? `<p class="hint">Owner <code>${esc(t.owner || '')}</code> · tasks: ${tasks.length}</p>` : ''}
+  <button type="button" class="secondary ov-open" data-tr="${esc(req.number)}">Open in Transport tab</button>
+  <h4 style="margin:0.5rem 0 0.25rem;font-size:0.85rem;color:var(--muted)">Tasks</h4>
+  <div class="scroll-table"><table class="data"><thead><tr><th>Task</th><th>Owner</th><th>Status</th><th>Desc</th></tr></thead><tbody>${taskRows || '<tr><td colspan="4" class="hint">No tasks</td></tr>'}</tbody></table></div>
+  <h4 style="margin:0.5rem 0 0.25rem;font-size:0.85rem;color:var(--muted)">Organizer objects (request)</h4>
+  <div class="scroll-table"><table class="data"><thead><tr><th>Name</th><th>Type</th><th>URI</th></tr></thead><tbody>${objRows || '<tr><td colspan="3" class="hint">None parsed</td></tr>'}</tbody></table></div>
+  ${taskOrgHtml ? `<h4 style="margin:0.5rem 0 0.25rem;font-size:0.85rem;color:var(--muted)">Per-task organizer</h4>${taskOrgHtml}` : ''}
+</details>`;
+            })
+            .join('');
+          wrap.querySelectorAll('.ov-open').forEach((btn) => {
+            btn.addEventListener('click', () => goToTransportTab(btn.dataset.tr));
+          });
+        }
+      } catch (e) {
+        wrap.innerHTML = `<p class="badge err">${esc(e.message)}</p>`;
+      }
+    });
+
+    const BASKET_KEY = 'transportUiBasket_v1';
+    function loadBasket() {
+      try {
+        const raw = sessionStorage.getItem(BASKET_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch {
+        return [];
+      }
+    }
+    function saveBasket(items) {
+      sessionStorage.setItem(BASKET_KEY, JSON.stringify(items));
+    }
+    function basketKey(o) {
+      return `${(o.adtType || '').toUpperCase()}|${(o.name || '').toUpperCase()}`;
+    }
+    function renderCatBasket() {
+      const ul = $('catBasket');
+      const items = loadBasket();
+      if (!items.length) {
+        ul.innerHTML = '<li class="hint">Basket empty — search or load a package, then add rows.</li>';
+        return;
+      }
+      ul.innerHTML = items
+        .map(
+          (o, i) =>
+            `<li><span>${esc(o.name)} <span class="hint">${esc(o.adtType)}</span></span><button type="button" class="secondary" data-idx="${i}">Remove</button></li>`,
+        )
+        .join('');
+      ul.querySelectorAll('button[data-idx]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.dataset.idx);
+          const next = loadBasket().filter((_x, j) => j !== idx);
+          saveBasket(next);
+          renderCatBasket();
+        });
+      });
+    }
+    function addToBasket(obj) {
+      const name = String(obj.name || '').trim().toUpperCase();
+      const adtType = String(obj.adtType || '').trim().toUpperCase();
+      if (!name || !adtType) return;
+      const items = loadBasket();
+      const k = basketKey({ name, adtType });
+      if (items.some((x) => basketKey(x) === k)) return;
+      items.push({ name, adtType, uri: obj.uri || '' });
+      saveBasket(items);
+      renderCatBasket();
+    }
+
+    let catSearchTimer;
+    let catHits = [];
+
+    function closeSuggest() {
+      const p = $('catSuggest');
+      p.classList.remove('open');
+      p.innerHTML = '';
+    }
+    function openSuggest(rows) {
+      catHits = rows;
+      const p = $('catSuggest');
+      if (!rows.length) {
+        closeSuggest();
+        return;
+      }
+      p.innerHTML = rows
+        .map(
+          (o, i) =>
+            `<div class="suggest-row" data-i="${i}"><strong>${esc(o.name)}</strong> <span class="suggest-meta">${esc(o.adtType)}</span></div>`,
+        )
+        .join('');
+      p.classList.add('open');
+      p.querySelectorAll('.suggest-row').forEach((el) => {
+        el.addEventListener('mousedown', (ev) => {
+          ev.preventDefault();
+          const i = Number(el.dataset.i);
+          const o = catHits[i];
+          if (o) addToBasket(o);
+          closeSuggest();
+        });
+      });
+    }
+    async function runCatSearch() {
+      const q = $('catSearch').value.trim();
+      if (!q) {
+        closeSuggest();
+        return;
+      }
+      const type = $('catSearchType').value.trim();
+      const qs = new URLSearchParams({ q, max: '50' });
+      if (type) qs.set('type', type);
+      try {
+        const data = await api('GET', `/api/objects/search?${qs}`);
+        openSuggest(data.objects || []);
+      } catch {
+        closeSuggest();
+      }
+    }
+
+    $('catSearch').addEventListener('input', () => {
+      clearTimeout(catSearchTimer);
+      catSearchTimer = setTimeout(runCatSearch, 320);
+    });
+    $('btnCatSearch').addEventListener('click', () => {
+      clearTimeout(catSearchTimer);
+      runCatSearch();
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.suggest-wrap')) closeSuggest();
+    });
+
+    $('btnCatInbox').addEventListener('click', async () => {
+      const w = $('catInboxWrap');
+      w.innerHTML = '<p class="hint">Loading…</p>';
+      try {
+        const qs = new URLSearchParams();
+        const u = $('catInboxUser').value.trim();
+        if (u) qs.set('user', u);
+        const st = $('catInboxStatus').value.trim();
+        if (st) qs.set('status', st);
+        const data = await api('GET', `/api/transports-inbox?${qs}`);
+        const rows = data.rows || [];
+        if (!rows.length) {
+          w.innerHTML = `<p class="hint">No rows parsed (${data.rawBytes || 0} bytes XML). Open a known request on the Transport tab, or inspect preview below.</p><pre class="out">${esc((data.rawPreview || '').slice(0, 2000))}</pre>`;
+          return;
+        }
+        w.innerHTML = `<table class="data"><thead><tr><th>Request</th><th>Status</th><th>Description</th><th></th></tr></thead><tbody>
+          ${rows
+            .map(
+              (r) => `<tr>
+            <td><code>${esc(r.number)}</code></td>
+            <td>${esc(r.status)} ${esc(r.statusText || '')}</td>
+            <td>${esc(r.description)}</td>
+            <td><button type="button" class="secondary cat-use-req" data-num="${esc(r.number)}">Use request</button></td>
+          </tr>`,
+            )
+            .join('')}
+        </tbody></table>`;
+        w.querySelectorAll('.cat-use-req').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            $('catRequest').value = btn.dataset.num || '';
+          });
+        });
+      } catch (e) {
+        w.innerHTML = `<p class="badge err">${esc(e.message)}</p>`;
+      }
+    });
+
+    $('btnCatPkg').addEventListener('click', async () => {
+      const w = $('catPkgWrap');
+      const pkg = $('catPkg').value.trim().toUpperCase();
+      if (!pkg) return;
+      w.innerHTML = '<p class="hint">Loading…</p>';
+      try {
+        const sub = $('catPkgSub').checked ? '1' : '0';
+        const data = await api('GET', `/api/objects/package/${encodeURIComponent(pkg)}?subpackages=${sub}`);
+        const objs = data.objects || [];
+        if (!objs.length) {
+          w.innerHTML = '<p class="hint">No objects (check package name).</p>';
+          return;
+        }
+        const slice = objs.slice(0, 500);
+        w.innerHTML = `<table class="data"><thead><tr><th>Name</th><th>Type</th><th>Description</th><th></th></tr></thead><tbody></tbody></table>${objs.length > 500 ? '<p class="hint">Showing first 500 only.</p>' : ''}`;
+        const tb = w.querySelector('tbody');
+        for (const o of slice) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td><code>${esc(o.name)}</code></td><td>${esc(o.adtType)}</td><td>${esc(o.description || '')}</td><td></td>`;
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'secondary';
+          b.textContent = 'Add';
+          b.addEventListener('click', () => addToBasket({ name: o.name, adtType: o.adtType }));
+          tr.querySelector('td:last-child').appendChild(b);
+          tb.appendChild(tr);
+        }
+      } catch (e) {
+        w.innerHTML = `<p class="badge err">${esc(e.message)}</p>`;
+      }
+    });
+
+    $('btnCatManAdd').addEventListener('click', () => {
+      addToBasket({ name: $('catManName').value, adtType: $('catManType').value });
+    });
+    $('btnCatBasketClear').addEventListener('click', () => {
+      saveBasket([]);
+      renderCatBasket();
+    });
+    $('btnCatAssign').addEventListener('click', async () => {
+      const el = $('outCatAssign');
+      const items = loadBasket();
+      if (!items.length) {
+        showPre(el, { error: 'Basket empty' });
+        return;
+      }
+      try {
+        const body = {
+          taskNumber: $('catTask').value.trim(),
+          transportRequestNumber: $('catRequest').value.trim(),
+          objects: items.map(({ name, adtType }) => ({ name, adtType })),
+        };
+        const r = await api('POST', '/api/objects/assign-transport', body);
+        showPre(el, r);
+      } catch (e) {
+        showPre(el, { error: e.message, detail: e.detail });
+      }
+    });
+
+    renderCatBasket();
+
+    initTabs();
+    loadConfig();
+  </script>
+</body>
+</html>

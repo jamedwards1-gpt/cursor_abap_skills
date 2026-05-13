@@ -5,6 +5,7 @@ const transport = process.env.BTP_ADT_TRANSPORT;
 const task = process.env.BTP_ADT_TASK;
 const extraArgs = process.argv.slice(2);
 const createObjects = extraArgs.includes('--create') || process.env.BTP_ADT_CREATE === '1';
+const recreateObjects = extraArgs.includes('--recreate') || process.env.BTP_ADT_RECREATE === '1';
 
 if (!transport) {
   console.error('Set BTP_ADT_TRANSPORT to the parcel transport request before running btp:push-parcel.');
@@ -19,6 +20,7 @@ const classes = [
   ['ZCL_PARCEL_POLL_UI_HTTP', `${root}/CLAS_OC/ZCL_PARCEL_POLL_UI_HTTP.clas.abap`],
   ['ZCL_PARCEL_QAD_POLL', `${root}/CLAS_OC/ZCL_PARCEL_QAD_POLL.clas.abap`],
   ['ZCL_PARCEL_QAD_DISCOVER', `${root}/CLAS_OC/ZCL_PARCEL_QAD_DISCOVER.clas.abap`],
+  ['ZCL_PARCEL_QAD_SCHEDULE', `${root}/CLAS_OC/ZCL_PARCEL_QAD_SCHEDULE.clas.abap`],
 ];
 
 function runNode(scriptPath, args) {
@@ -47,7 +49,8 @@ function runPush(className, sourcePath) {
     transport,
     ...(task ? ['--task', task] : []),
     ...(createObjects ? ['--create'] : []),
-    ...extraArgs.filter((arg) => arg !== '--create'),
+    ...(recreateObjects ? ['--recreate'] : []),
+    ...extraArgs.filter((arg) => arg !== '--create' && arg !== '--recreate'),
   ];
 
   return runNode(path.resolve('scripts/push-abap-class.mjs'), args);

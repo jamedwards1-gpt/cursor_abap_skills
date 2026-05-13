@@ -60,13 +60,31 @@ Several scripts default transports in `parcel-monitor/src/config.js`. Override w
 
 | Variable | Purpose |
 |----------|---------|
-| `BTP_ADT_TRANSPORT` | Transport request (e.g. `H01K900032`) |
-| `BTP_ADT_TASK` | Transport task |
+| `BTP_ADT_TRANSPORT` | Transport **request** (e.g. `H01K900032`) or, in ADT, the **task** number you see in the list (e.g. `H01K900033`); scripts resolve the parent request when needed |
+| `BTP_ADT_TASK` | Optional explicit transport **task** / `corrNr` (e.g. `H01K900033`) |
 | `BTP_ADT_TRANSPORT_OWNER` | **ABAP user** that owns the transport (e.g. `CB9980000010`), **not** your BTP email |
 | `BTP_ADT_PACKAGE` | Package name (default `ZPARCEL` for parcel tooling) |
 | `BTP_ADT_ENV` | Optional path to env file (default: `.secrets/btp-abap.env` from repo root) |
+| `BTP_ADT_TASK_TYPE` | Optional `tm:type` when creating a **new transport task** (default `Development/Correction`). `Workbench` is not a valid task `tm:type` in ADT (Workbench = request type **K**); scripts map it to `Development/Correction`. |
+
+**Adding a task with JWT:** If `npm run btp:transport-task` fails with “User does not exist” / `SCTS_ADT_MSG`, add the task in **ADT Transport Organizer**, or run **`npm run btp:transport-request -- "description"`** to create a new **Workbench** request (includes an initial task).
 
 You can export these in your shell or add them to a **local** file you source; do **not** commit real transport numbers if they are sensitive.
+
+### `$TMP` vs `ZPARCEL` (and the “not assigned to transport” dialog)
+
+On **BTP ABAP**, objects you create or push with this repo’s scripts are tied to **`BTP_ADT_PACKAGE`** (default **`ZPARCEL`**) and a **transport task** via `corrNr`. They are **not** created in `$TMP` by those scripts.
+
+In **ADT**, the **“Activate inactive objects — not assigned to a transport request”** list is about **which CTS request/task records the activation**, not necessarily that the objects live in `$TMP`. You can still assign that activation to **`H01K900030`** (or another request) while the objects remain in **`ZPARCEL`**.
+
+If you **did** create copies in **`$TMP`** in Eclipse (local, not transportable), move them to **`ZPARCEL`** with ADT (**change package / object directory** for each object, or delete the `$TMP` copies and run `btp:push-parcel` so the system versions match the repo).
+
+To confirm what the system thinks today:
+
+```bash
+npm run btp:verify-parcel-packages
+# optional: same shell exports as for pushes, e.g. BTP_ADT_TRANSPORT=H01K900030 BTP_ADT_TRANSPORT_OWNER=CB9980000010
+```
 
 ## 4. Cursor: MCP (ABAP ADT)
 

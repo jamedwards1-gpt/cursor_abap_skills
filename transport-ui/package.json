@@ -1,0 +1,20 @@
+{
+  "name": "transport-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local web UI for ADT transport inspection and repo push scripts",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "prestart": "node scripts/stop.mjs",
+    "start": "node src/server.js",
+    "start:single": "node src/server.js",
+    "stop": "node scripts/stop.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

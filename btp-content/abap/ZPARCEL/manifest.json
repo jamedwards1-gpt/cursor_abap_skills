@@ -1,8 +1,16 @@
 {
   "syncedAt": "2026-05-12T23:04:09.186Z",
   "packageName": "ZPARCEL",
-  "objectCount": 12,
+  "objectCount": 13,
   "objects": [
+    {
+      "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "adtType": "CLAS/OC",
+      "description": "Static JSON for transport-ui / HTTP smoke tests",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
+      "status": "source"
+    },
     {
       "name": "ZCL_PARCEL_POLL_UI_HTTP",
       "adtType": "CLAS/OC",
