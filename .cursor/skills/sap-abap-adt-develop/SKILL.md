@@ -10,7 +10,7 @@ description: >-
 
 ## Session
 
-- Auth file: `.secrets/btp-abap.env` (create with `npm run btp:auth -- --key .secrets/service-key.json`).
+- Auth file: `.secrets/btp-abap.env` (create with `npm run btp:auth`; service key path is configured in `package.json`).
 - MCP server: `abap-adt` in `.cursor/mcp.json` with `--exposition=readonly,high`.
 - Reload Cursor after MCP or auth changes.
 

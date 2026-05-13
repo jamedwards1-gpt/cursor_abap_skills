@@ -7,3 +7,21 @@ node_modules/
 .secrets/service-key.json
 btp-content/adt-discovery.xml
 btp-content/connection-summary.json
+
+# ZPARCEL: repo tracks only the transport-ui HTTP sample; other objects may still exist on BTP.
+btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_*.clas.abap
+btp-content/abap/ZPARCEL/CLAS_OC/ZCX_PARCEL_*.clas.abap
+btp-content/abap/ZPARCEL/DDLS_DF/
+btp-content/abap/ZPARCEL/TABL_DT/
+btp-content/abap/ZPARCEL/VIEW_DV/
+btp-content/abap/ZPARCEL/SAJC/
+btp-content/abap/ZPARCEL/SAJT/
+
+# ZZSD: parcel sync mirror removed from this repo; may reappear after sync if still on system.
+btp-content/abap/ZZSD/CLAS_OC/ZCL_CE_PARCEL_PIPE.clas.abap
+btp-content/abap/ZZSD/CLAS_OC/ZSC_ECC_PARCEL.clas.abap
+btp-content/abap/ZZSD/DDLS_DF/ZCUP_PARCEL_TRAC.asddls
+btp-content/abap/ZZSD/DDLS_DF/ZC_BTP_PARCELSYNC.asddls
+btp-content/abap/ZZSD/DDLS_DF/Z_I_PARCEL_DATA.asddls
+btp-content/abap/ZZSD/DDLS_DF/Z_I_PARCEL_PIPE.asddls
+btp-content/abap/ZZSD/TABL_DT/ZCUP_PARCEL_TRAC.tabl.abap

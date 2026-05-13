@@ -8,7 +8,7 @@
  *
  * Usage:
  *   node scripts/create-apj-job-template.mjs
- *   node scripts/create-apj-job-template.mjs --template ZJT_PARCEL_QAD --catalog Z_PARCEL_QAD_BG --package ZPARCEL
+ *   node scripts/create-apj-job-template.mjs --template ZJT_MY_JOB --catalog Z_MY_JOB_CAT --package ZZSD
  */
 import { createRequire } from 'node:module';
 import path from 'node:path';
@@ -29,10 +29,10 @@ const noopLogger = { debug: () => {}, info: () => {}, warn: () => {}, error: () 
 
 function parseArgs(argv) {
   const out = {
-    templateName: 'ZJT_PARCEL_QAD',
-    catalogName: 'Z_PARCEL_QAD_BG',
-    packageName: (process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase(),
-    description: 'Parcel QAD — poll & discover',
+    templateName: 'ZJT_MY_JOB',
+    catalogName: 'Z_MY_JOB_CAT',
+    packageName: (process.env.BTP_ADT_PACKAGE || 'ZZSD').toUpperCase(),
+    description: 'Application job template (set --template / --catalog)',
     pBatch: '5',
     pClient: 'UK1',
   };

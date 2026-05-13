@@ -5,7 +5,7 @@
  *
  * Usage:
  *   node scripts/create-apj-catalog.mjs
- *   node scripts/create-apj-catalog.mjs --name Z_PARCEL_QAD_BG --handler ZCL_PARCEL_QAD_BG_JOB --package ZPARCEL
+ *   node scripts/create-apj-catalog.mjs --name Z_MY_JOB_CAT --handler ZCL_MY_JOB_HANDLER --package ZZSD
  *
  * After a successful run, activate the object in ADT if it is still inactive (or close the editor
  * if activation reports EU510 — the object is open in Eclipse).
@@ -29,10 +29,10 @@ const noopLogger = { debug: () => {}, info: () => {}, warn: () => {}, error: () 
 
 function parseArgs(argv) {
   const out = {
-    name: 'Z_PARCEL_QAD_BG',
-    handler: 'ZCL_PARCEL_QAD_BG_JOB',
-    packageName: (process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase(),
-    description: 'Parcel QAD poll & discover (ZPARCEL)',
+    name: 'Z_MY_JOB_CAT',
+    handler: 'ZCL_MY_JOB_HANDLER',
+    packageName: (process.env.BTP_ADT_PACKAGE || 'ZZSD').toUpperCase(),
+    description: 'Application job catalog (set --name / --handler for your handler class)',
   };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];

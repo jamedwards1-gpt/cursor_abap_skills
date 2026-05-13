@@ -176,7 +176,7 @@
       </p>
       <p class="hint">
         <strong>First-principles workaround:</strong> run logic <em>inside</em> the system as an
-        <code>IF_HTTP_SERVICE_EXTENSION</code> handler (you already do this with <code>ZCL_PARCEL_POLL_UI_HTTP</code>), publish it as an HTTP service,
+        <code>IF_HTTP_SERVICE_EXTENSION</code> handler (for example <code>ZCL_TRANSPORT_UI_STATIC_JSON</code> in this repo), publish it as an HTTP service,
         then call it with the same identity as ADT (JWT in <code>.secrets/btp-abap.env</code>) using the safe GET proxy below — path only, allowlisted prefixes.
       </p>
       <h3>Example class in this repo</h3>
@@ -395,17 +395,6 @@
       <pre class="out" id="outPush" style="display:none;"></pre>
     </section>
 
-    <section class="panel" data-tab="parcel">
-      <h2>Parcel consolidate</h2>
-      <div class="row">
-        <div><label>Request number</label><input type="text" id="parRq" /></div>
-        <div><label>Task (optional)</label><input type="text" id="parTk" /></div>
-        <div><label>Owner</label><input type="text" id="parOwner" /></div>
-      </div>
-      <button type="button" class="primary" id="btnParcel">parcel-consolidate-transport</button>
-      <pre class="out" id="outParcel" style="display:none;"></pre>
-    </section>
-
     <section class="panel" data-tab="children">
       <h2>Transport children (CLI)</h2>
       <div class="row">
@@ -423,7 +412,7 @@
         This runs <code>experiment-transport-bind.mjs</code> against real transports. Only use on disposable requests/tasks you understand.
       </div>
       <div class="row">
-        <div><label>Class (default ZCL_PARCEL_QAD_SCHEDULE)</label><input type="text" id="exCn" /></div>
+        <div><label>Class (default ZCL_TRANSPORT_UI_STATIC_JSON)</label><input type="text" id="exCn" /></div>
         <div><label>BTP_EXPERIMENT_REQUEST</label><input type="text" id="exRq" value="H01K900034" /></div>
         <div><label>BTP_EXPERIMENT_TASK</label><input type="text" id="exTk" value="H01K900035" /></div>
         <div><label>Owner</label><input type="text" id="exOwner" /></div>
@@ -444,7 +433,6 @@
       ['catalog', 'Mini STMS'],
       ['create', 'Create TR / task'],
       ['push', 'Push'],
-      ['parcel', 'Parcel'],
       ['children', 'Children'],
       ['experiment', 'Experiment'],
     ];
@@ -731,20 +719,6 @@
           task: $('pdTk').value,
           owner: $('pdOwner').value.trim(),
           create: $('pdCreate').checked,
-        });
-        showPre(el, execResultPre('', r));
-      } catch (e) {
-        showPre(el, { error: e.message, detail: e.detail });
-      }
-    });
-
-    $('btnParcel').addEventListener('click', async () => {
-      const el = $('outParcel');
-      try {
-        const r = await api('POST', '/api/exec/parcel-consolidate', {
-          request: $('parRq').value,
-          task: $('parTk').value,
-          owner: $('parOwner').value.trim(),
         });
         showPre(el, execResultPre('', r));
       } catch (e) {

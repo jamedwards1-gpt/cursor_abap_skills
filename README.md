@@ -1,6 +1,8 @@
 # SAP BTP ABAP sandbox (steampunk)
 
-Local tooling, ADT MCP, and a small **parcel monitor** UI that talks to your BTP ABAP environment over ADT using a JWT stored in a gitignored secrets file.
+Local **Node.js tooling**, **ADT MCP**, **transport-ui** (CTS / push helpers), and a tiny **sample ABAP class** in `ZPARCEL` (`ZCL_TRANSPORT_UI_STATIC_JSON`) for HTTP smoke tests. Your own application ABAP can live in other packages or repos; sync them with `npm run btp:sync-package -- <PACKAGE>`.
+
+Auth uses a JWT stored in a **gitignored** `.secrets/btp-abap.env` file (see below).
 
 ## Prerequisites
 
@@ -34,12 +36,14 @@ Copy your downloaded key into the repo **only inside** `.secrets/` (this path is
 .secrets/service-key.json
 ```
 
-Create the **auth env file** used by MCP, scripts, and the parcel monitor:
+Create the **auth env file** used by MCP, scripts, and transport-ui:
 
 ```bash
 npm install
-npm run btp:auth -- --key .secrets/service-key.json -o .secrets/btp-abap.env
+npm run btp:auth
 ```
+
+(`btp:auth` passes `-k .secrets/service-key.json` by default in `package.json`.)
 
 What this does:
 
@@ -49,42 +53,30 @@ What this does:
 Re-run the same command when the token expires. Use `--force` if you need a fresh login while an old token is still present:
 
 ```bash
-npm run btp:auth -- --key .secrets/service-key.json -o .secrets/btp-abap.env --force
+npm run btp:auth -- --force
 ```
 
 Optional: use `--browser none` if you prefer to copy the URL manually.
 
 ## 3. Environment variables for transports and scripts
 
-Several scripts default transports in `parcel-monitor/src/config.js`. Override with env vars when yours differ:
+Set these in your shell or in `.secrets/btp-abap.env` (values only you should know):
 
 | Variable | Purpose |
 |----------|---------|
 | `BTP_ADT_TRANSPORT` | Transport **request** (e.g. `H01K900032`) or, in ADT, the **task** number you see in the list (e.g. `H01K900033`); scripts resolve the parent request when needed |
 | `BTP_ADT_TASK` | Optional explicit transport **task** / `corrNr` (e.g. `H01K900033`) |
 | `BTP_ADT_TRANSPORT_OWNER` | **ABAP user** that owns the transport (e.g. `CB9980000010`), **not** your BTP email |
-| `BTP_ADT_PACKAGE` | Package name (default `ZPARCEL` for parcel tooling) |
+| `SAP_USERNAME` | Same intent as transport owner for CTS inbox APIs when the JWT `user_name` is an email |
+| `BTP_ADT_PACKAGE` | Default package for some push scripts (often `ZPARCEL` for the sample class, or set per command) |
 | `BTP_ADT_ENV` | Optional path to env file (default: `.secrets/btp-abap.env` from repo root) |
 | `BTP_ADT_TASK_TYPE` | Optional `tm:type` when creating a **new transport task** (default `Development/Correction`). `Workbench` is not a valid task `tm:type` in ADT (Workbench = request type **K**); scripts map it to `Development/Correction`. |
 
 **Adding a task with JWT:** If `npm run btp:transport-task` fails with “User does not exist” / `SCTS_ADT_MSG`, add the task in **ADT Transport Organizer**, or run **`npm run btp:transport-request -- "description"`** to create a new **Workbench** request (includes an initial task).
 
-You can export these in your shell or add them to a **local** file you source; do **not** commit real transport numbers if they are sensitive.
+**Pushes without a fixed transport:** `node scripts/push-abap-class.mjs … --auto-transport` can pick an inbox request or create a Workbench request when the inbox is empty (see script help text).
 
-### `$TMP` vs `ZPARCEL` (and the “not assigned to transport” dialog)
-
-On **BTP ABAP**, objects you create or push with this repo’s scripts are tied to **`BTP_ADT_PACKAGE`** (default **`ZPARCEL`**) and a **transport task** via `corrNr`. They are **not** created in `$TMP` by those scripts.
-
-In **ADT**, the **“Activate inactive objects — not assigned to a transport request”** list is about **which CTS request/task records the activation**, not necessarily that the objects live in `$TMP`. You can still assign that activation to **`H01K900030`** (or another request) while the objects remain in **`ZPARCEL`**.
-
-If you **did** create copies in **`$TMP`** in Eclipse (local, not transportable), move them to **`ZPARCEL`** with ADT (**change package / object directory** for each object, or delete the `$TMP` copies and run `btp:push-parcel` so the system versions match the repo).
-
-To confirm what the system thinks today:
-
-```bash
-npm run btp:verify-parcel-packages
-# optional: same shell exports as for pushes, e.g. BTP_ADT_TRANSPORT=H01K900030 BTP_ADT_TRANSPORT_OWNER=CB9980000010
-```
+Do **not** commit real transport numbers if they are sensitive.
 
 ## 4. Cursor: MCP (ABAP ADT)
 
@@ -109,19 +101,21 @@ npm run btp:sync-package -- ZPARCEL
 # or another package, e.g. ZZSD
 ```
 
-Other useful scripts: `btp:push-class`, `btp:push-table`, `btp:push-ddls`, `btp:push-parcel`, `parcel:monitor` (see `package.json`).
+For **`ZPARCEL`**, this repository intentionally tracks only **`ZCL_TRANSPORT_UI_STATIC_JSON`**. Other objects may still exist on BTP; `.gitignore` hides the usual mirror paths so a full-package sync does not create noisy untracked files here.
 
-## 6. Parcel monitor (local UI)
+Other useful scripts: `btp:push-class`, `btp:push-table`, `btp:push-ddls`, `btp:push-qad`, `transport-ui` (see `package.json`).
+
+## 6. Transport UI (local)
 
 ```bash
-npm run parcel:monitor
+npm run transport-ui
 ```
 
-Then open **http://127.0.0.1:4010** (defaults; override with `PARCEL_MONITOR_HOST` / `PARCEL_MONITOR_PORT`).
+Small Express app that shells the repo’s ADT/CTS scripts and exposes a browser UI. Configure env the same way as for CLI scripts.
 
 ## ABAP syntax highlighting in Cursor
 
-Yes, this repo includes workspace settings for colouring **ABAP** and **CDS** mirror files:
+This repo can include workspace settings for colouring **ABAP** and **CDS** mirror files:
 
 - **`.vscode/extensions.json`** recommends:
   - **ABAP:** [vscode-abap](https://marketplace.visualstudio.com/items?itemName=larshp.vscode-abap) (`larshp.vscode-abap`)

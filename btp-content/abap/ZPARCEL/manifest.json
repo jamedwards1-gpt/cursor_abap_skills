@@ -1,147 +1,16 @@
 {
-  "syncedAt": "2026-05-13T19:58:53.447Z",
+  "syncedAt": "2026-05-13T00:00:00.000Z",
   "packageName": "ZPARCEL",
-  "objectCount": 15,
+  "objectCount": 1,
   "objects": [
-    {
-      "name": "ZCL_PARCEL_POLL_UI_HTTP",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_POLL_UI_HTTP",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_POLL_UI_HTTP.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZCL_PARCEL_QAD_BG_JOB",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_QAD_BG_JOB",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_BG_JOB.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZCL_PARCEL_QAD_DISCOVER",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_QAD_DISCOVER",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_DISCOVER.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZCL_PARCEL_QAD_POLL",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_QAD_POLL",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_POLL.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZCL_PARCEL_QAD_QUERY",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_QAD_QUERY",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_QUERY.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZCL_PARCEL_QAD_SCHEDULE",
-      "adtType": "CLAS/OC",
-      "description": "ZCL_PARCEL_QAD_SCHEDULE",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_PARCEL_QAD_SCHEDULE.clas.abap",
-      "status": "source"
-    },
     {
       "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
       "adtType": "CLAS/OC",
-      "description": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "description": "Static JSON for transport-ui / HTTP smoke tests",
       "packageName": "ZPARCEL",
       "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
       "status": "source"
-    },
-    {
-      "name": "ZCX_PARCEL_QAD_ERROR",
-      "adtType": "CLAS/OC",
-      "description": "ZCX_PARCEL_QAD_ERROR",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCX_PARCEL_QAD_ERROR.clas.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZI_PARCEL_POLL_LOG",
-      "adtType": "DDLS/DF",
-      "description": "Polling Log for Parcel QAD shipments",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/DDLS_DF/ZI_PARCEL_POLL_LOG.asddls",
-      "status": "source"
-    },
-    {
-      "name": "Z_PARCEL_QAD_BG",
-      "adtType": "SAJC",
-      "description": "Parcel QAD poll & discover",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/SAJC/Z_PARCEL_QAD_BG.abap",
-      "status": "skipped"
-    },
-    {
-      "name": "ZJT_PARCEL_QAD",
-      "adtType": "SAJT",
-      "description": "Parcel QAD — poll & discover",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/SAJT/ZJT_PARCEL_QAD.abap",
-      "status": "skipped"
-    },
-    {
-      "name": "ZPARCEL_POLL_LOG",
-      "adtType": "TABL/DT",
-      "description": "Parcel QAD shipment polling log",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_POLL_LOG.tabl.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZPARCEL_TRC_H",
-      "adtType": "TABL/DT",
-      "description": "ZPARCEL_TRC_H",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_TRC_H.tabl.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZPARCEL_TRC_P",
-      "adtType": "TABL/DT",
-      "description": "ZPARCEL_TRC_P",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/TABL_DT/ZPARCEL_TRC_P.tabl.abap",
-      "status": "source"
-    },
-    {
-      "name": "ZIPARCELPOLLLOG",
-      "adtType": "VIEW/DV",
-      "description": "Polling Log for Parcel QAD shipments",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/VIEW_DV/ZIPARCELPOLLLOG.abap",
-      "status": "skipped"
     }
   ],
-  "failures": [
-    {
-      "name": "Z_PARCEL_QAD_BG",
-      "adtType": "SAJC",
-      "sourceError": "Object type SAJC does not support source code reading",
-      "metadataError": "Unsupported object type for metadata: SAJC"
-    },
-    {
-      "name": "ZJT_PARCEL_QAD",
-      "adtType": "SAJT",
-      "sourceError": "Object type SAJT does not support source code reading",
-      "metadataError": "Unsupported object type for metadata: SAJT"
-    },
-    {
-      "name": "ZIPARCELPOLLLOG",
-      "adtType": "VIEW/DV",
-      "sourceError": "Object type VIEW/DV does not support source code reading",
-      "metadataError": "Unsupported object type for metadata: VIEW/DV"
-    }
-  ]
+  "failures": []
 }

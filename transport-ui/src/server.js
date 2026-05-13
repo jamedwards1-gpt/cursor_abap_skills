@@ -410,24 +410,6 @@ app.post('/api/exec/push-ddls', async (req, res) => {
   }
 });
 
-app.post('/api/exec/parcel-consolidate', async (req, res) => {
-  const { request, task, owner } = req.body || {};
-  const rq = String(request || '').trim().toUpperCase();
-  if (!rq) {
-    res.status(400).json({ error: 'request (transport number) required' });
-    return;
-  }
-  const env = {};
-  if (task) {
-    env.BTP_ADT_TASK = String(task).trim().toUpperCase();
-  }
-  if (owner) {
-    env.BTP_ADT_TRANSPORT_OWNER = owner;
-  }
-  const r = await runRepoScript('scripts/parcel-consolidate-transport.mjs', [rq], env);
-  res.json(r);
-});
-
 app.post('/api/exec/create-task', async (req, res) => {
   const { transport, owner, description, taskType, listOnly } = req.body || {};
   const tr = String(transport || '').trim().toUpperCase();
@@ -479,7 +461,7 @@ app.post('/api/exec/transport-children', async (req, res) => {
 
 app.post('/api/exec/experiment-bind', async (req, res) => {
   const { className, source, request, task, owner } = req.body || {};
-  const cn = String(className || 'ZCL_PARCEL_QAD_SCHEDULE').trim().toUpperCase();
+  const cn = String(className || 'ZCL_TRANSPORT_UI_STATIC_JSON').trim().toUpperCase();
   const src = source ? String(source) : '';
   const rq = String(request || 'H01K900034').trim().toUpperCase();
   const tk = String(task || 'H01K900035').trim().toUpperCase();

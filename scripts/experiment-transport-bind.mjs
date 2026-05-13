@@ -2,10 +2,10 @@
  * Try several delete+create strategies so new ABAP objects bind to a CTS task like Eclipse,
  * then read Transport Organizer v1+xml and count tm:abap_object rows (task + request).
  *
- * Defaults: request H01K900034, task H01K900035, class ZCL_PARCEL_QAD_SCHEDULE.
+ * Defaults: request H01K900034, task H01K900035, class ZCL_TRANSPORT_UI_STATIC_JSON.
  *
  *   BTP_ADT_TRANSPORT_OWNER=CB9980000010 node scripts/experiment-transport-bind.mjs
- *   node scripts/experiment-transport-bind.mjs ZCL_PARCEL_QAD_OTHER /path/to.clas.abap
+ *   node scripts/experiment-transport-bind.mjs ZCL_MY_CLASS /path/to.clas.abap
  *
  * Requires: npm run btp:auth
  */
@@ -37,7 +37,7 @@ const TASK = (process.env.BTP_EXPERIMENT_TASK || 'H01K900035').toUpperCase();
 const packageName = (process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase();
 
 const argv = process.argv.slice(2).filter((a) => !a.startsWith('-'));
-const className = (argv[0] || 'ZCL_PARCEL_QAD_SCHEDULE').toUpperCase();
+const className = (argv[0] || 'ZCL_TRANSPORT_UI_STATIC_JSON').toUpperCase();
 const sourcePath = argv[1]
   ? path.resolve(argv[1])
   : path.join(repoRoot, 'btp-content/abap/ZPARCEL/CLAS_OC', `${className}.clas.abap`);
