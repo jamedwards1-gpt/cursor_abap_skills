@@ -1,0 +1,16 @@
+{
+  "syncedAt": "2026-05-13T21:20:08.943Z",
+  "packageName": "ZZPARCEL",
+  "objectCount": 1,
+  "objects": [
+    {
+      "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "packageName": "ZZPARCEL",
+      "path": "btp-content/abap/ZZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
+      "status": "source"
+    }
+  ],
+  "failures": []
+}

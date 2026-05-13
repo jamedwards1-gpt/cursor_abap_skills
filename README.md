@@ -1,6 +1,6 @@
 # SAP BTP ABAP sandbox (steampunk)
 
-Local **Node.js tooling**, **ADT MCP**, **transport-ui** (CTS / push helpers), and a tiny **sample ABAP class** in `ZPARCEL` (`ZCL_TRANSPORT_UI_STATIC_JSON`) for HTTP smoke tests. Your own application ABAP can live in other packages or repos; sync them with `npm run btp:sync-package -- <PACKAGE>`.
+Local **Node.js tooling**, **ADT MCP**, **transport-ui** (CTS / push helpers), and a tiny **sample ABAP class** in **`ZZPARCEL`** (`ZCL_TRANSPORT_UI_STATIC_JSON`) for HTTP smoke tests. Your own application ABAP can live in other packages or repos; sync them with `npm run btp:sync-package -- <PACKAGE>`.
 
 Auth uses a JWT stored in a **gitignored** `.secrets/btp-abap.env` file (see below).
 
@@ -68,7 +68,7 @@ Set these in your shell or in `.secrets/btp-abap.env` (values only you should kn
 | `BTP_ADT_TASK` | Optional explicit transport **task** / `corrNr` (e.g. `H01K900033`) |
 | `BTP_ADT_TRANSPORT_OWNER` | **ABAP user** that owns the transport (e.g. `CB9980000010`), **not** your BTP email |
 | `SAP_USERNAME` | Same intent as transport owner for CTS inbox APIs when the JWT `user_name` is an email |
-| `BTP_ADT_PACKAGE` | Default package for some push scripts (often `ZPARCEL` for the sample class, or set per command) |
+| `BTP_ADT_PACKAGE` | Default package for some push scripts (often **`ZZPARCEL`** for the sample class, or set per command) |
 | `BTP_ADT_ENV` | Optional path to env file (default: `.secrets/btp-abap.env` from repo root) |
 | `BTP_ADT_TASK_TYPE` | Optional `tm:type` when creating a **new transport task** (default `Development/Correction`). `Workbench` is not a valid task `tm:type` in ADT (Workbench = request type **K**); scripts map it to `Development/Correction`. |
 
@@ -97,11 +97,13 @@ If MCP fails to connect, re-run `btp:auth` and reload again.
 ## 5. Sync the local ABAP mirror
 
 ```bash
-npm run btp:sync-package -- ZPARCEL
+npm run btp:sync-package -- ZZPARCEL
 # or another package, e.g. ZZSD
 ```
 
-For **`ZPARCEL`**, this repository intentionally tracks only **`ZCL_TRANSPORT_UI_STATIC_JSON`**. Other objects may still exist on BTP; `.gitignore` hides the usual mirror paths so a full-package sync does not create noisy untracked files here.
+The **`ZZPARCEL`** mirror in this repo tracks the **HTTP sample class** only. The legacy **`ZPARCEL`** tree may still exist on your BTP system for older objects; `.gitignore` hides typical `ZPARCEL` mirror noise if you run a full-package sync there.
+
+**Create a package on BTP:** `npm run btp:create-package -- ZZPARCEL --auto-transport --super-package ZZSD "My description"`. The script asks ADT for **`pak:recordChanges=true`** (the “Record objects changes in transport requests” checkbox). Some ABAP Cloud systems answer **TR434** to that on create; the script then falls back to **`recordChanges=false`** and prints a reminder to turn recording on in **ADT → package → Overview** when the field is editable (as in your package editor screenshot).
 
 Other useful scripts: `btp:push-class`, `btp:push-table`, `btp:push-ddls`, `btp:push-qad`, `transport-ui` (see `package.json`).
 

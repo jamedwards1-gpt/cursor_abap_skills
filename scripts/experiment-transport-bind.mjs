@@ -34,13 +34,13 @@ const { unlockClass } = require(path.join(adtClassRoot, 'unlock.js'));
 
 const REQUEST = (process.env.BTP_EXPERIMENT_REQUEST || 'H01K900034').toUpperCase();
 const TASK = (process.env.BTP_EXPERIMENT_TASK || 'H01K900035').toUpperCase();
-const packageName = (process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase();
+const packageName = (process.env.BTP_ADT_PACKAGE || 'ZZPARCEL').toUpperCase();
 
 const argv = process.argv.slice(2).filter((a) => !a.startsWith('-'));
 const className = (argv[0] || 'ZCL_TRANSPORT_UI_STATIC_JSON').toUpperCase();
 const sourcePath = argv[1]
   ? path.resolve(argv[1])
-  : path.join(repoRoot, 'btp-content/abap/ZPARCEL/CLAS_OC', `${className}.clas.abap`);
+  : path.join(repoRoot, 'btp-content/abap', packageName, 'CLAS_OC', `${className}.clas.abap`);
 
 async function refreshAdtConnection(connection) {
   connection.setSessionType('stateless');

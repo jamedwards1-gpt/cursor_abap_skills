@@ -99,7 +99,7 @@ app.get('/api/config', (_req, res) => {
     hasJwt: Boolean(env?.SAP_JWT_TOKEN),
     hasUrl: Boolean(env?.SAP_URL),
     sapClient: env?.SAP_CLIENT || '100',
-    packageDefault: process.env.BTP_ADT_PACKAGE || 'ZPARCEL',
+    packageDefault: process.env.BTP_ADT_PACKAGE || 'ZZPARCEL',
     transportOwner: process.env.BTP_ADT_TRANSPORT_OWNER || resolveTransportOwner(env) || '',
     identity,
     hint: 'Refresh JWT: npm run btp:auth -- --key .secrets/service-key.json',
@@ -312,7 +312,7 @@ app.post('/api/exec/push-class', async (req, res) => {
     const env = {
       BTP_ADT_TRANSPORT: tr,
       BTP_ADT_TASK: tk,
-      BTP_ADT_PACKAGE: process.env.BTP_ADT_PACKAGE || 'ZPARCEL',
+      BTP_ADT_PACKAGE: process.env.BTP_ADT_PACKAGE || 'ZZPARCEL',
     };
     if (owner) {
       env.BTP_ADT_TRANSPORT_OWNER = owner;
@@ -338,7 +338,7 @@ app.post('/api/exec/push-table', async (req, res) => {
   const src = String(source || '');
   const tr = String(transport || '').trim().toUpperCase();
   const tk = String(task || '').trim().toUpperCase();
-  const pk = String(pkg || 'ZPARCEL').toUpperCase();
+  const pk = String(pkg || 'ZZPARCEL').toUpperCase();
   if (!tn || !src || !tr || !tk) {
     res.status(400).json({ error: 'tableName, source, transport, task required' });
     return;

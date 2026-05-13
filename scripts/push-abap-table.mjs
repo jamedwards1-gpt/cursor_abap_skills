@@ -6,7 +6,7 @@ import { resolveTransportTask } from './lib/adt-transport.mjs';
 
 const tableName = (process.argv[2] || '').toUpperCase();
 const sourcePath = process.argv[3] ? path.resolve(process.argv[3]) : null;
-const packageName = (process.argv[4] || process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase();
+const packageName = (process.argv[4] || process.env.BTP_ADT_PACKAGE || 'ZZPARCEL').toUpperCase();
 const transportRequest = process.env.BTP_ADT_TRANSPORT || '';
 const taskNumber = process.env.BTP_ADT_TASK || '';
 

@@ -1,16 +1,7 @@
 {
   "syncedAt": "2026-05-13T00:00:00.000Z",
   "packageName": "ZPARCEL",
-  "objectCount": 1,
-  "objects": [
-    {
-      "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
-      "adtType": "CLAS/OC",
-      "description": "Static JSON for transport-ui / HTTP smoke tests",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
-      "status": "source"
-    }
-  ],
+  "objectCount": 0,
+  "objects": [],
   "failures": []
 }

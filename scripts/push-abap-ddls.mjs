@@ -77,7 +77,7 @@ const description = extractDescription(ddlSource, viewName);
 const session = await connectAdtSession(loadAdtSession());
 const connection = session.connection;
 const adtClient = new AdtClient(connection);
-const packageName = (process.env.BTP_ADT_PACKAGE || 'ZPARCEL').toUpperCase();
+const packageName = (process.env.BTP_ADT_PACKAGE || 'ZZPARCEL').toUpperCase();
 
 let corrNr = options.task;
 
