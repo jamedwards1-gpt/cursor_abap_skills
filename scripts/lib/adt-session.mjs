@@ -50,6 +50,10 @@ export function resolveTransportOwner(env, fallback = '') {
     return process.env.BTP_ADT_TRANSPORT_OWNER;
   }
 
+  if (env?.BTP_ADT_TRANSPORT_OWNER) {
+    return env.BTP_ADT_TRANSPORT_OWNER;
+  }
+
   if (env?.SAP_USERNAME) {
     return env.SAP_USERNAME;
   }

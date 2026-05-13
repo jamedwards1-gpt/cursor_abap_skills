@@ -1,16 +1,8 @@
 {
-  "syncedAt": "2026-05-12T23:04:09.186Z",
+  "syncedAt": "2026-05-13T19:58:53.447Z",
   "packageName": "ZPARCEL",
-  "objectCount": 13,
+  "objectCount": 15,
   "objects": [
-    {
-      "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
-      "adtType": "CLAS/OC",
-      "description": "Static JSON for transport-ui / HTTP smoke tests",
-      "packageName": "ZPARCEL",
-      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
-      "status": "source"
-    },
     {
       "name": "ZCL_PARCEL_POLL_UI_HTTP",
       "adtType": "CLAS/OC",
@@ -60,6 +52,14 @@
       "status": "source"
     },
     {
+      "name": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "adtType": "CLAS/OC",
+      "description": "ZCL_TRANSPORT_UI_STATIC_JSON",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/CLAS_OC/ZCL_TRANSPORT_UI_STATIC_JSON.clas.abap",
+      "status": "source"
+    },
+    {
       "name": "ZCX_PARCEL_QAD_ERROR",
       "adtType": "CLAS/OC",
       "description": "ZCX_PARCEL_QAD_ERROR",
@@ -74,6 +74,22 @@
       "packageName": "ZPARCEL",
       "path": "btp-content/abap/ZPARCEL/DDLS_DF/ZI_PARCEL_POLL_LOG.asddls",
       "status": "source"
+    },
+    {
+      "name": "Z_PARCEL_QAD_BG",
+      "adtType": "SAJC",
+      "description": "Parcel QAD poll & discover",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/SAJC/Z_PARCEL_QAD_BG.abap",
+      "status": "skipped"
+    },
+    {
+      "name": "ZJT_PARCEL_QAD",
+      "adtType": "SAJT",
+      "description": "Parcel QAD — poll & discover",
+      "packageName": "ZPARCEL",
+      "path": "btp-content/abap/ZPARCEL/SAJT/ZJT_PARCEL_QAD.abap",
+      "status": "skipped"
     },
     {
       "name": "ZPARCEL_POLL_LOG",
@@ -109,6 +125,18 @@
     }
   ],
   "failures": [
+    {
+      "name": "Z_PARCEL_QAD_BG",
+      "adtType": "SAJC",
+      "sourceError": "Object type SAJC does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJC"
+    },
+    {
+      "name": "ZJT_PARCEL_QAD",
+      "adtType": "SAJT",
+      "sourceError": "Object type SAJT does not support source code reading",
+      "metadataError": "Unsupported object type for metadata: SAJT"
+    },
     {
       "name": "ZIPARCELPOLLLOG",
       "adtType": "VIEW/DV",
