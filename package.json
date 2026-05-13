@@ -11,6 +11,7 @@
     "btp:transport-task": "node scripts/create-transport-task.mjs",
     "btp:transport-request": "node scripts/create-transport-request.mjs",
     "btp:create-package": "node scripts/create-abap-package.mjs",
+    "btp:create-apj-catalog": "node scripts/create-apj-catalog.mjs",
     "btp:push-table": "node scripts/push-abap-table.mjs",
     "btp:push-ddls": "node scripts/push-abap-ddls.mjs",
     "btp:push-qad": "node scripts/push-qad-classes.mjs",
